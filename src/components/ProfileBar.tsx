@@ -22,13 +22,16 @@ const ProfileBar = () => {
         </div>
       </div>
       <div className="flex items-center space-x-1">
-        <a href="https://github.com/linnlatt132">
+        <a href="https://github.com/linnlatt132" className="hover:opacity-50">
           <Github />
         </a>
-        <a href="https://www.linkedin.com/in/linnlatt-cho-543745238/">
+        <a
+          href="https://www.linkedin.com/in/linnlatt-cho-543745238/"
+          className="hover:opacity-50"
+        >
           <Linkedin />
         </a>
-        <a href="mailto:clinnlatt@gmail.com">
+        <a href="mailto:clinnlatt@gmail.com" className="hover:opacity-50">
           <Email />
         </a>
       </div>
