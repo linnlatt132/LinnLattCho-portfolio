@@ -1,7 +1,5 @@
 import Profile from "../assets/images/profileLogo.svg?react";
-import Email from "../assets/icons/Email.svg?react";
-import Linkedin from "../assets/icons/Linkedin.svg?react";
-import Github from "../assets/icons/Github.svg?react";
+import DarkLight from "./DarkLight";
 
 const ProfileBar = () => {
   return (
@@ -14,26 +12,15 @@ const ProfileBar = () => {
             <span className="tracking-tight">Hello! I'm</span> Linn Latt Cho
           </h1>
           <div className="items-center justify-center space-x-2 px-2 flex border-dashed border rounded-full border-black/10 text-black/60">
-            <div className="w-[8px] h-[8px] rounded-full bg-green-500"></div>
+            <div className="w-[8px] h-[8px] rounded-full bg-green-500 animate-pulse"></div>
             <p className="text-[16px] font-extralight tracking-tight ">
               Available for work!
             </p>
           </div>
         </div>
       </div>
-      <div className="flex items-center space-x-1">
-        <a href="https://github.com/linnlatt132" className="hover:opacity-50">
-          <Github />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/linnlatt-cho-543745238/"
-          className="hover:opacity-50"
-        >
-          <Linkedin />
-        </a>
-        <a href="mailto:clinnlatt@gmail.com" className="hover:opacity-50">
-          <Email />
-        </a>
+      <div className="flex items-center justify-center">
+        <DarkLight />
       </div>
     </div>
   );
