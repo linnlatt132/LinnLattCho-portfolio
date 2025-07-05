@@ -21,7 +21,7 @@ const navItems = [
 
 const NavBar = () => {
   return (
-    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-5 justify-between px-3 py-2 bg-gray-100 border-1 border-gray-400 shadow-lg rounded-[15px] z-30">
+    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-5 justify-between px-3 py-2 bg-gray-100 dark:bg-gray-900 border-1 border-zinc-300  rounded-[15px] z-30">
       {navItems.map((item) => (
         <div
           key={item.id}

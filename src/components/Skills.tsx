@@ -5,7 +5,7 @@ import { skills } from "../data/skills";
 
 gsap.registerPlugin(useGSAP);
 
-const Skills = () => {
+const SkillsList = () => {
   const container = useRef(null);
 
   useGSAP(
@@ -58,8 +58,8 @@ const Skills = () => {
           key={name}
           className="flex items-center space-x-1 text-sm text-black hover:scale-105 hover:cursor-default transition-transform"
         >
-          <Logo className="w-8 h-8" />
-          <span className="text-[14px]">{name}</span>
+          <Logo className="w-8 h-8 dark:text-white" />
+          <span className="text-[14px] dark:text-white">{name}</span>
         </div>
       ))}
     </div>
@@ -68,9 +68,9 @@ const Skills = () => {
   return (
     <div
       ref={container}
-      className="mt-3 border rounded-[15px] border-black/50 bg-white pb-3"
-      //   onMouseEnter={() => gsap.globalTimeline.pause()}
-      //   onMouseLeave={() => gsap.globalTimeline.resume()}
+      className="mt-3 border rounded-[15px] border-zinc-300 bg-transparent  pb-3"
+      onMouseEnter={() => gsap.globalTimeline.pause()}
+      onMouseLeave={() => gsap.globalTimeline.resume()}
     >
       <h1 className="text-[10px] text-gray-400 font-light mb-4 pt-3 pl-3">
         Skills :
@@ -82,4 +82,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default SkillsList;
