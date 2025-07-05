@@ -5,7 +5,7 @@ const ProfileBar = () => {
   return (
     <div className="bg-transparent flex flex-col sm:flex-row my-5 px-4 sm:px-0 justify-between items-center gap-4">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-        <Profile className="rounded-full w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] border-2 border-purple-500" />
+        <Profile className="rounded-full w-[70px] h-[70px] sm:w-[70px] sm:h-[70px] border-2 border-purple-500" />
 
         <div className="flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
           <h1 className="text-xl sm:text-2xl font-semibold leading-tight">

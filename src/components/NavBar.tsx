@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Home,
@@ -7,19 +7,58 @@ import {
   Menu as MenuIcon,
   X as CloseIcon,
 } from "lucide-react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-// Define nav items with label, icon, and path
+gsap.registerPlugin(useGSAP);
+
+/* nav items ------------------------------------------------------- */
 const navItems = [
   { id: 1, label: "Home", icon: Home, path: "/" },
   { id: 2, label: "Email", icon: Mail, path: "/email" },
   { id: 3, label: "Projects", icon: PanelsTopLeft, path: "/projects" },
 ];
 
+/* component ------------------------------------------------------- */
 const NavBar = () => {
   const location = useLocation();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false); // toggle state
+  const [showBox, setShowBox] = useState(false); // render‑control
+  const boxRef = useRef<HTMLDivElement>(null);
 
-  // Render each nav item
+  /* mount the box *first*, then run the open animation -------------- */
+  useEffect(() => {
+    if (open) setShowBox(true);
+  }, [open]);
+
+  /* animate open / close ------------------------------------------- */
+  useGSAP(
+    () => {
+      if (!boxRef.current) return;
+
+      if (open) {
+        // 💡 OPEN: from invisible → visible
+        gsap.fromTo(
+          boxRef.current,
+          { autoAlpha: 0, y: 20, scale: 0.95 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 0.3, ease: "power3.out" }
+        );
+      } else {
+        // 💡 CLOSE: fade + drop, then unmount
+        gsap.to(boxRef.current, {
+          autoAlpha: 0,
+          y: 20,
+          scale: 0.95,
+          duration: 0.25,
+          ease: "power3.in",
+          onComplete: () => setShowBox(false),
+        });
+      }
+    },
+    { dependencies: [open] }
+  );
+
+  /* helper to render each nav link --------------------------------- */
   const renderItem = (item: (typeof navItems)[0]) => {
     const { id, label, icon: Icon, path } = item;
     const isActive = location.pathname === path;
@@ -28,10 +67,9 @@ const NavBar = () => {
       <Link
         key={id}
         to={path}
-        onClick={() => setMenuOpen(false)}
-        className={`group flex flex-col items-center sm:flex-row
-                    focus:outline-none
-                    transition-all duration-200 
+        onClick={() => setOpen(false)}
+        className={`group flex items-center gap-1
+                    transition-all duration-200
                     ${
                       isActive
                         ? "text-black dark:text-white"
@@ -39,48 +77,47 @@ const NavBar = () => {
                     }`}
       >
         <Icon
-          size={26}
+          size={24}
           strokeWidth={isActive ? 1 : 0.5}
           className={`transition-transform ${
             isActive ? "scale-110" : "group-hover:scale-110"
           }`}
         />
-        <span
-          className={`hidden sm:inline text-[15px] ${
-            isActive ? "font-normal" : "font-light"
-          } ml-1`}
-        >
+        <span className={`text-sm ${isActive ? "font-normal" : "font-light"}`}>
           {label}
         </span>
       </Link>
     );
   };
 
+  /* JSX ------------------------------------------------------------- */
   return (
     <nav
       className="fixed bottom-3 left-1/2 -translate-x-1/2
                  bg-[#dfdff8] dark:bg-gray-900 border border-zinc-300
-                 rounded-[15px] px-4 py-2 z-30 flex items-center"
+                 rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6"
     >
-      {/* Desktop navbar */}
+      {/* desktop */}
       <div className="hidden sm:flex space-x-6">{navItems.map(renderItem)}</div>
 
-      {/* Mobile hamburger toggle */}
+      {/* mobile menu toggle */}
       <button
-        className="sm:hidden block focus:outline-none"
-        onClick={() => setMenuOpen((prev) => !prev)}
+        className="sm:hidden flex items-center gap-1 focus:outline-none hover:cursor-pointer cursor-default"
+        onClick={() => setOpen((p) => !p)}
       >
-        {menuOpen ? <CloseIcon size={26} /> : <MenuIcon size={26} />}
+        {open ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
+        <span className="text-sm font-medium">Menu</span>
       </button>
 
-      {/* Mobile dropdown menu */}
-      {menuOpen && (
+      {/* mobile dropdown (animated) */}
+      {showBox && (
         <div
+          ref={boxRef}
           className="absolute bottom-14 left-1/2 -translate-x-1/2
-                     flex flex-col space-y-2
+                     flex flex-col gap-2
                      bg-gray-100 dark:bg-gray-900
                      border border-zinc-300 rounded-lg
-                     p-3 shadow-lg"
+                     p-4 shadow-xl z-40"
         >
           {navItems.map(renderItem)}
         </div>
