@@ -5,15 +5,15 @@ import { Sparkle } from "lucide-react";
 
 const AboutMe = () => {
   return (
-    <div className=" p-5 mt-5  border-1 rounded-[15px] border-black/50">
+    <div className=" p-3 mt-5  border-1 rounded-[15px] border-black/50">
       <h1 className="text-[10px] text-gray-400 font-light ">About Me :</h1>
       <div className="flex items-center space-x-2">
-        <p className="my-2 text-2xl font-semibold font-mono">
+        <p className="my-1 text-2xl font-semibold font-mono">
           Front-end Developer
         </p>
         <Sparkle className="text-yellow-900 animate-pulse" />
       </div>
-      <p className="my-2 font-mono text-[12px] font-light">
+      <p className="my-1 font-mono text-[12px] font-light">
         "I'm a{" "}
         <span className="font-semibold text-purple-600 dark:text-purple-400">
           passionate front-end developer{" "}

@@ -1,6 +1,7 @@
 import AboutMe from "../components/AboutMe";
 import NavBar from "../components/NavBar";
 import ProfileBar from "../components/ProfileBar";
+import Skills from "../components/Skills";
 
 const Home = () => {
   return (
@@ -14,7 +15,13 @@ const Home = () => {
 
         {/* About Me */}
         <AboutMe />
-        
+
+        {/* Skills */}
+        <Skills/>
+
+        {/* Projects */}
+
+        {/* Certificates */}
       </div>
     </div>
   );
