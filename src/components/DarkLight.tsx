@@ -6,12 +6,12 @@ import { useTheme } from "../data/useTheme";
 const DarkLight = () => {
   const { theme, toggleTheme } = useTheme();
   const knobRef = useRef<HTMLDivElement>(null);
+  const isSmallScreen = window.matchMedia("(min-width: 640px)").matches;
 
   useEffect(() => {
     const isDark = theme === "dark";
-
     gsap.to(knobRef.current, {
-      x: isDark ? 34 : 0, // Slide knob position
+      x: isDark ? (isSmallScreen ? 35 : 30) : 0, // Slide knob position
       duration: 0.4,
       ease: "power2.inOut",
     });
@@ -25,7 +25,7 @@ const DarkLight = () => {
       {/* Sliding knob */}
       <div
         ref={knobRef}
-        className="absolute top-[3px] left-[2px] w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] bg-white rounded-full shadow-md z-10"
+        className="absolute top-[3px] left-[2px] w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] bg-white rounded-full shadow-md z-10"
       />
 
       {/* Icons */}
