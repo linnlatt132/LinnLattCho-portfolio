@@ -19,7 +19,7 @@ const Background = () => {
           .timeline({
             repeat: -1,
             yoyo: true,
-            delay: index * 0.3,
+            delay: index * 0.2,
           })
           .fromTo(
             bubble,
@@ -41,11 +41,11 @@ const Background = () => {
 
   const gradients = [
     "from-pink-200 to-purple-400 dark:from-purple-950 dark:to-indigo-800",
-    "from-blue-200 to-indigo-300 dark:from-indigo-800 dark:to-blue-900",
-    "from-yellow-100 to-pink-300 dark:from-yellow-800 dark:to-pink-900",
-    "from-green-200 to-teal-300 dark:from-emerald-900 dark:to-teal-800",
-    "from-red-200 to-orange-300 dark:from-red-900 dark:to-amber-800",
-    "from-sky-200 to-blue-300 dark:from-sky-900 dark:to-indigo-800",
+    "from-blue-200 to-indigo-400 dark:from-indigo-800 dark:to-blue-900",
+    "from-yellow-100 to-pink-400 dark:from-yellow-800 dark:to-pink-900",
+    "from-green-200 to-teal-400 dark:from-emerald-900 dark:to-teal-800",
+    "from-red-200 to-orange-400 dark:from-red-900 dark:to-amber-800",
+    "from-sky-200 to-blue-400 dark:from-sky-900 dark:to-indigo-800",
   ];
 
   return (
