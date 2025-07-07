@@ -8,19 +8,19 @@ const Home = () => {
     <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
       <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px]">
         {/* Profile */}
-        {/* <ProfileBar /> */}
+        <ProfileBar />
 
         {/* Nav bar on bottom */}
-        {/* <NavBar /> */}
+        <NavBar />
 
         {/* About Me */}
-        {/* <AboutMe /> */}
+        <AboutMe />
 
         {/* Skills */}
-        {/* <SkillsList /> */}
+        <SkillsList />
 
         {/* Projects */}
-        {/* <p>
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nisi
           soluta corrupti inventore suscipit facilis sequi ea neque voluptate
           ipsa consequuntur iste enim, fugit excepturi! Voluptas magni itaque
@@ -31,7 +31,7 @@ const Home = () => {
           adipisicing elit. Minus ea illo enim quod, dicta, dolore voluptates,
           quaerat repudiandae molestiae odit corrupti. Blanditiis alias ad
           voluptatem laudantium repudiandae incidunt. A, eveniet!
-        </p> */}
+        </p>
 
         {/* Certificates */}
       </div>
