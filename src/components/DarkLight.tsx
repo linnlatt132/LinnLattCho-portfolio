@@ -1,7 +1,7 @@
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useTheme } from "../data/useTheme";
+import { useTheme } from "../data/ThemeContext";
 
 const DarkLight = () => {
   const { theme, toggleTheme } = useTheme();
@@ -30,8 +30,14 @@ const DarkLight = () => {
 
       {/* Icons */}
       <div className="z-20 flex justify-between items-center w-full px-1">
-        <Sun size={16} className="text-yellow-500 sm:size-5" />
-        <Moon size={16} className="text-yellow-500 sm:size-5" />
+        <Sun
+          size={16}
+          className="text-[#6d84e4] dark:text-yellow-500 sm:size-5 transition-colors"
+        />
+        <Moon
+          size={16}
+          className="text-[#6d84e4] dark:text-yellow-500 sm:size-5 transition-colors"
+        />
       </div>
     </div>
   );

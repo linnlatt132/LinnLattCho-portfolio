@@ -1,22 +1,52 @@
 import Email from "../assets/icons/Email.svg?react";
+import EmailWhite from "../assets/icons/EmailWhite.svg?react";
 import Linkedin from "../assets/icons/Linkedin.svg?react";
+import LinkedinWhite from "../assets/icons/LinkedinWhite.svg?react";
 import Github from "../assets/icons/Github.svg?react";
+import GithubWhite from "../assets/icons/GitHubWhite.svg?react";
 import { Sparkle } from "lucide-react";
+import GlassCard from "./GlassCard";
+import type React from "react";
+import { useTheme } from "../data/ThemeContext";
+
+//links
+interface SocialLinkProps {
+  href: string;
+  IconLight: React.FC<React.SVGProps<SVGSVGElement>>;
+  IconDark: React.FC<React.SVGProps<SVGSVGElement>>;
+  label: string;
+}
+
+const SocialLink = ({ href, IconLight, IconDark, label }: SocialLinkProps) => {
+  const { theme } = useTheme();
+  const Icon = theme === "dark" ? IconDark : IconLight;
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className="hover:opacity-60 transition-opacity"
+    >
+      <Icon className="w-6 h-6 sm:w-7 sm:h-7 border border-zinc-600 dark:border-zinc-400 rounded-[10px] p-1" />
+    </a>
+  );
+};
 
 const AboutMe = () => {
   return (
-    <div className="p-2 sm:p-3 mt-5 border rounded-[15px] border-zinc-300">
+    <GlassCard>
       {/* Title */}
-      <h1 className="text-[10px] sm:text-xs text-gray-400 font-light mb-1">
+      {/* <h1 className="text-[10px] sm:text-xs text-gray-400 font-light mb-1">
         About Me :
-      </h1>
+      </h1> */}
 
       {/* Role and Sparkle */}
-      <div className="flex items-center flex-wrap gap-2">
+      <div className="flex items-center flex-wrap gap-2  mb-4 sm:mb-5">
         <p className="text-xl sm:text-2xl font-semibold font-mono text-[#210635] dark:text-[#FFF9FB]">
           Front-end Developer
         </p>
-        <Sparkle className="text-[#eac097] animate-pulse" />
+        <Sparkle className="dark:text-[#eac097] text-[#6d84e4] animate-pulse" />
       </div>
 
       {/* Paragraph */}
@@ -42,33 +72,27 @@ const AboutMe = () => {
       </p>
 
       {/* Social Icons */}
-      <div className="flex flex-wrap items-center justify-center sm:justify-end space-x-4 mt-5">
-        <a
+      <div className="flex flex-wrap space-x-2 items-center justify-center sm:justify-start mt-5 ">
+        <SocialLink
           href="https://github.com/linnlatt132"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-60 transition-opacity"
-        >
-          <Github className="w-7 h-7 sm:w-8 sm:h-8" />
-        </a>
-        <a
+          IconLight={Github}
+          IconDark={GithubWhite}
+          label="GitHub profile"
+        />
+        <SocialLink
           href="https://www.linkedin.com/in/linnlatt-cho-543745238/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-60 transition-opacity"
-        >
-          <Linkedin className="w-7 h-7 sm:w-8 sm:h-8" />
-        </a>
-        <a
+          IconLight={Linkedin}
+          IconDark={LinkedinWhite}
+          label="LinkedIn profile"
+        />
+        <SocialLink
           href="mailto:clinnlatt@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-60 transition-opacity"
-        >
-          <Email className="w-7 h-7 sm:w-8 sm:h-8" />
-        </a>
+          IconLight={Email}
+          IconDark={EmailWhite}
+          label="Send email"
+        />
       </div>
-    </div>
+    </GlassCard>
   );
 };
 

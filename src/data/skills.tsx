@@ -15,26 +15,48 @@ import Leaflet from "../assets/icons/Skills/leaflet.svg?react";
 import FramerMotion from "../assets/icons/Skills/framer-motion.svg?react";
 import Gsap from "../assets/icons/Skills/gsap.svg?react";
 
-export const skills = {
+// importing for dark theme
+import HTMLWhite from "../assets/icons/Skills/dark/htmlWhite.svg?react";
+import CSSWhite from "../assets/icons/Skills/dark/cssWhite.svg?react";
+import TailwindWhite from "../assets/icons/Skills/dark/jsWhite.svg?react";
+import JSWhite from "../assets/icons/Skills/dark/jsWhite.svg?react";
+import TSWhite from "../assets/icons/Skills/dark/tsWhite.svg?react";
+import ReactLogoWhite from "../assets/icons/Skills/dark/reactWhite.svg?react";
+import SocketIOWhite from "../assets/icons/Skills/dark/socketIoWhite.svg?react";
+import DatabaseWhite from "../assets/icons/Skills/dark/databaseWhite.svg?react";
+import JavaWhite from "../assets/icons/Skills/dark/javaWhite.svg?react";
+import CPPWhite from "../assets/icons/Skills/dark/cppWhite.svg?react";
+import GitHubWhite from "../assets/icons/Skills/dark/gitHubWhite.svg?react";
+import FigmaWhite from "../assets/icons/Skills/dark/figmaWhite.svg?react";
+import LeafletWhite from "../assets/icons/Skills/dark/leafletWhite.svg?react";
+import FramerMotionWhite from "../assets/icons/Skills/dark/framerWhite.svg?react";
+import GsapWhite from "../assets/icons/Skills/dark/gsapWhite.svg?react";
+import type { SkillItem } from "../components/SkillsLists";
+
+export const skills: {
+  frontend: SkillItem[];
+  backend: SkillItem[];
+  tools: SkillItem[];
+} = {
   frontend: [
-    { name: "HTML", logo: HTML },
-    { name: "CSS", logo: CSS },
-    { name: "Tailwind", logo: Tailwind },
-    { name: "JavaScript", logo: JS },
-    { name: "TypeScript", logo: TS },
+    { name: "HTML", logo: HTML, darkLogo: HTMLWhite },
+    { name: "CSS", logo: CSS, darkLogo: CSSWhite },
+    { name: "Tailwind", logo: Tailwind, darkLogo: TailwindWhite },
+    { name: "JavaScript", logo: JS, darkLogo: JSWhite },
+    { name: "TypeScript", logo: TS, darkLogo: TSWhite },
   ],
   backend: [
-    { name: "React", logo: ReactLogo },
-    { name: "Socket.IO", logo: WebSocket },
-    { name: "Database", logo: Database },
-    { name: "Java", logo: Java },
-    { name: "C++", logo: CPP },
+    { name: "React", logo: ReactLogo, darkLogo: ReactLogoWhite },
+    { name: "Socket.IO", logo: WebSocket, darkLogo: SocketIOWhite },
+    { name: "Database", logo: Database, darkLogo: DatabaseWhite },
+    { name: "Java", logo: Java, darkLogo: JavaWhite },
+    { name: "C++", logo: CPP, darkLogo: CPPWhite },
   ],
   tools: [
-    { name: "GitHub", logo: GitHub },
-    { name: "Figma", logo: Figma },
-    { name: "Leaflet", logo: Leaflet },
-    { name: "Framer Motion", logo: FramerMotion },
-    { name: "GSAP", logo: Gsap },
+    { name: "GitHub", logo: GitHub, darkLogo: GitHubWhite },
+    { name: "Figma", logo: Figma, darkLogo: FigmaWhite },
+    { name: "Leaflet", logo: Leaflet, darkLogo: LeafletWhite },
+    { name: "Framer Motion", logo: FramerMotion, darkLogo: FramerMotionWhite },
+    { name: "GSAP", logo: Gsap, darkLogo: GsapWhite },
   ],
 };

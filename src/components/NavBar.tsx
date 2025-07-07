@@ -69,7 +69,7 @@ const NavBar = () => {
         to={path}
         onClick={() => setOpen(false)}
         className={`group flex items-center gap-1
-                    transition-all duration-200
+                    transition-all duration-200 
                     ${
                       isActive
                         ? "text-black dark:text-white"
@@ -94,8 +94,8 @@ const NavBar = () => {
   return (
     <nav
       className="fixed bottom-3 left-1/2 -translate-x-1/2
-                 bg-[#dfdff8] dark:bg-gray-900 border border-zinc-300
-                 rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6"
+                 bg-[#dfdff8] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
+                 rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6 shadow-2xs"
     >
       {/* desktop */}
       <div className="hidden sm:flex space-x-6">{navItems.map(renderItem)}</div>
@@ -115,7 +115,7 @@ const NavBar = () => {
           ref={boxRef}
           className="absolute bottom-14 left-1/2 -translate-x-1/2
                      flex flex-col gap-2
-                     bg-gray-100 dark:bg-gray-900
+                     bg-[#dfdff8] dark:bg-gray-900
                      border border-zinc-300 rounded-lg
                      p-4 shadow-xl z-40"
         >

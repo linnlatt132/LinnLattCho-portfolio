@@ -1,12 +1,22 @@
-import { useRef } from "react";
+import { useRef, type FC, type SVGProps } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { skills } from "../data/skills";
+import GlassCard from "./GlassCard";
+import { useTheme } from "../data/ThemeContext";
 
 gsap.registerPlugin(useGSAP);
 
+type IconType = FC<SVGProps<SVGSVGElement>>;
+export type SkillItem = {
+  name: string;
+  logo: IconType;
+  darkLogo?: IconType;
+};
+
 const SkillsList = () => {
   const container = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme()
 
   useGSAP(
     () => {
@@ -58,35 +68,44 @@ const SkillsList = () => {
     <div
       className={`flex flex-wrap justify-center items-center gap-x-6 gap-y-3 py-2 overflow-hidden ${rowClass}`}
     >
-      {skillArray.map(({ name, logo: Logo }) => (
-        <div
-          key={name}
-          className="flex items-center space-x-1 text-xs hover:scale-105 hover:cursor-default transition-transform"
-        >
-          <Logo className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 dark:text-white" />
-          <span className="sm:text-[14px] text-[13px] dark:text-white">
-            {name}
-          </span>
-        </div>
-      ))}
+      {skillArray.map(({ name, logo, darkLogo }) => {
+        const IconComponent = theme === "dark" && darkLogo ? darkLogo : logo;
+
+        return (
+          <div
+            key={`${name}-${theme}`} // force re-render of icon block
+            className="flex items-center space-x-1 text-xs hover:scale-105 hover:cursor-default transition-transform"
+          >
+            <IconComponent
+              key={`${name}-icon-${theme}`} // 🧠 this is crucial!
+              data-theme={theme}
+              className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
+            />
+            <span className="sm:text-[14px] text-[13px] dark:text-white">
+              {name}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 
   /* -------------------- component markup -------------------- */
   return (
-    <div
+    <GlassCard
       ref={container}
-      className="mt-3 border rounded-[15px] border-zinc-300 bg-transparent pb-4 px-2 sm:px-3"
+      key={theme}
+      className="px-3"
       onMouseEnter={() => gsap.globalTimeline.pause()}
       onMouseLeave={() => gsap.globalTimeline.resume()}
     >
-      <h1 className="text-[10px] sm:text-xs text-gray-400 font-light mb-2 pt-3">
+      {/* <h1 className="text-[10px] sm:text-xs text-gray-400 font-light mb-2 pt-3">
         Skills&nbsp;:
-      </h1>
+      </h1> */}
       {renderRow("row1", skills.frontend)}
       {renderRow("row2", skills.backend)}
       {renderRow("row3", skills.tools)}
-    </div>
+    </GlassCard>
   );
 };
 

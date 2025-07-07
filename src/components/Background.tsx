@@ -45,12 +45,12 @@ const Background = () => {
     "from-yellow-100 to-pink-400 dark:from-yellow-800 dark:to-pink-900",
     "from-green-200 to-teal-400 dark:from-emerald-900 dark:to-teal-800",
     "from-red-200 to-orange-400 dark:from-red-900 dark:to-amber-800",
-    "from-sky-200 to-blue-400 dark:from-sky-900 dark:to-indigo-800",
+    "from-sky-200 to-emerald-400 dark:from-sky-800 dark:to-emerald-800",
   ];
 
   return (
     <div ref={wrapperRef} className="fixed inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 transition-colors duration-500 dark:bg-[#160f1e]" />
+      <div className="absolute inset-0 transition-colors bg- duration-500  dark:bg-[#160f1e]" />
 
       {gradients.map((gradient, i) => (
         <div

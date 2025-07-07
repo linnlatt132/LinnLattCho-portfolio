@@ -6,7 +6,7 @@ import SkillsList from "../components/SkillsLists";
 const Home = () => {
   return (
     <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
-      <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px]">
+      <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] sm:py-25 py-20">
         {/* Profile */}
         <ProfileBar />
 
