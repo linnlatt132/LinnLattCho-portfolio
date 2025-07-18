@@ -20,7 +20,7 @@ const DarkLight = () => {
   return (
     <div
       onClick={toggleTheme}
-      className="w-[60px] sm:w-[70px] h-[32px] sm:h-[36px] bg-[#dfdff8] dark:bg-[#664381] rounded-full p-[2px] flex items-center justify-between relative cursor-pointer transition-colors"
+      className="w-[60px] sm:w-[70px] h-[32px] sm:h-[36px] sm:bg-[#dfdff8] bg-[#bcbce7] dark:bg-[#664381] rounded-full p-[2px] flex items-center justify-between relative cursor-pointer transition-colors"
     >
       {/* Sliding knob */}
       <div
@@ -32,11 +32,11 @@ const DarkLight = () => {
       <div className="z-20 flex justify-between items-center w-full px-1">
         <Sun
           size={16}
-          className="text-[#6d84e4] dark:text-yellow-500 sm:size-5 transition-colors"
+          className="text-[#5b74d7] dark:text-yellow-500 sm:size-5 transition-colors"
         />
         <Moon
           size={16}
-          className="text-[#6d84e4] dark:text-yellow-500 sm:size-5 transition-colors"
+          className="text-[#5b74d7] dark:text-yellow-500 sm:size-5 transition-colors"
         />
       </div>
     </div>

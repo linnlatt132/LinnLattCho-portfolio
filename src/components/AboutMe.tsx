@@ -4,7 +4,7 @@ import Linkedin from "../assets/icons/Linkedin.svg?react";
 import LinkedinWhite from "../assets/icons/LinkedinWhite.svg?react";
 import Github from "../assets/icons/Github.svg?react";
 import GithubWhite from "../assets/icons/GitHubWhite.svg?react";
-import { Sparkle } from "lucide-react";
+import { ChevronsRight, Sparkle } from "lucide-react";
 import GlassCard from "./GlassCard";
 import type React from "react";
 import { useTheme } from "../data/ThemeContext";
@@ -71,26 +71,35 @@ const AboutMe = () => {
         learning and love challenging myself to create better with each build.
       </p>
 
-      {/* Social Icons */}
-      <div className="flex flex-wrap space-x-2 items-center justify-center sm:justify-start mt-5 ">
-        <SocialLink
-          href="https://github.com/linnlatt132"
-          IconLight={Github}
-          IconDark={GithubWhite}
-          label="GitHub profile"
-        />
-        <SocialLink
-          href="https://www.linkedin.com/in/linnlatt-cho-543745238/"
-          IconLight={Linkedin}
-          IconDark={LinkedinWhite}
-          label="LinkedIn profile"
-        />
-        <SocialLink
-          href="mailto:clinnlatt@gmail.com"
-          IconLight={Email}
-          IconDark={EmailWhite}
-          label="Send email"
-        />
+      <div className="flex align-middle items-center p-0 justify-between mt-5 ">
+        {/* Social Icons */}
+        <div className="flex flex-wrap space-x-2 items-center justify-center sm:justify-start ">
+          <SocialLink
+            href="https://github.com/linnlatt132"
+            IconLight={Github}
+            IconDark={GithubWhite}
+            label="GitHub profile"
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/linnlatt-cho-543745238/"
+            IconLight={Linkedin}
+            IconDark={LinkedinWhite}
+            label="LinkedIn profile"
+          />
+          <SocialLink
+            href="mailto:clinnlatt@gmail.com"
+            IconLight={Email}
+            IconDark={EmailWhite}
+            label="Send email"
+          />
+        </div>
+        <div className="flex space-x-2 align-middle items-center justify-center font-light text-[12px] sm:text-[13px] hover:cursor-pointer hover:animate-none">
+          Download my CV from
+          <ChevronsRight
+            strokeWidth={1}
+            className="w-6 h-6 sm:w-7 sm:h-7 sm:p-[1px] p-[2px]"
+          />
+        </div>
       </div>
     </GlassCard>
   );
