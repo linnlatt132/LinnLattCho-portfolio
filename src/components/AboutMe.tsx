@@ -93,7 +93,7 @@ const AboutMe = () => {
             label="Send email"
           />
         </div>
-        <div className="flex space-x-2 align-middle items-center justify-center font-light text-[12px] sm:text-[13px] hover:cursor-pointer hover:animate-none">
+        <div className="flex space-x-2 align-middle items-center justify-center font-light text-[12px] sm:text-[13px] hover:cursor-pointer hover:animate-none pr-3 hover:pr-0 hover:opacity-60 transition-all">
           Download my CV from
           <ChevronsRight
             strokeWidth={1}

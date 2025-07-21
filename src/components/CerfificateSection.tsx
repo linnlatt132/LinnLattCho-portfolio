@@ -96,7 +96,7 @@ const CertificateSection = () => {
           y: 0,
           duration: 0.5,
           ease: "power2.out",
-          delay: index * 0.1,
+          delay: index * 0.3,
           scrollTrigger: {
             trigger: el,
             start: "top 90%",
@@ -129,7 +129,9 @@ const CertificateSection = () => {
               onMouseLeave={() => setHoveredCert(null)}
               className="cursor-pointer px-3 py-2 rounded-md transition-colors duration-200 hover:bg-white/20 dark:hover:bg-zinc-700/30 border border-transparent hover:border-zinc-400 dark:hover:border-zinc-500"
             >
-              {cert.title}
+              <a target="-blank" href="https:/www.w3schools.com">
+                {cert.title}
+              </a>
             </li>
           ))}
         </ul>
