@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+.font-secondary {
+  font-family: mono;
+  font-weight: 200;
+}
