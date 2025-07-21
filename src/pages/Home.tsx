@@ -1,8 +1,8 @@
 import AboutMe from "../components/AboutMe";
 import CertificateSection from "../components/CerfificateSection";
+import MyProjects from "../components/MyProjects";
 import NavBar from "../components/NavBar";
 import ProfileBar from "../components/ProfileBar";
-import ProjectCard from "../components/ProjectCard";
 import SkillsList from "../components/SkillsLists";
 
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
         {/* Certificates */}
         <CertificateSection />
         {/* Projects */}
-        <ProjectCard />
+        <MyProjects />
         <p className="">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nisi
           soluta corrupti inventore suscipit facilis sequi ea neque voluptate

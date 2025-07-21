@@ -23,14 +23,6 @@ const certificates = [
     title: "SheCodes React Certificate",
     img: "https://img.freepik.com/free-vector/aesthetic-winter-certificate_742173-9966.jpg?t=st=1752837480~exp=1752841080~hmac=cbc9d9511a8a822be5ea0e89f1301ad22aef41bd13baa1cd5d884e4fdfd1c472&w=740",
   },
-  {
-    title: "Fundamental ITPEC Certificate",
-    img: "https://img.freepik.com/free-vector/aesthetic-winter-certificate_742173-9966.jpg?t=st=1752837480~exp=1752841080~hmac=cbc9d9511a8a822be5ea0e89f1301ad22aef41bd13baa1cd5d884e4fdfd1c472&w=740",
-  },
-  {
-    title: "Backend Internship Certificate",
-    img: "https://img.freepik.com/free-vector/aesthetic-winter-certificate_742173-9966.jpg?t=st=1752837480~exp=1752841080~hmac=cbc9d9511a8a822be5ea0e89f1301ad22aef41bd13baa1cd5d884e4fdfd1c472&w=740",
-  },
 ];
 
 const CertificateSection = () => {
