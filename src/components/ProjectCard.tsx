@@ -35,7 +35,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
                 Source
               </button>
               <button className="border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
-                Link
+                Live Site
               </button>
             </div>
           </div>

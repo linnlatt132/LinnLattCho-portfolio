@@ -3,7 +3,7 @@ import DarkLight from "./DarkLight";
 
 const ProfileBar = () => {
   return (
-    <div className="bg-transparent flex flex-col sm:flex-row my-5 px-4 sm:px-0 justify-between items-center gap-4">
+    <div className="bg-transparent flex flex-col sm:flex-row my-6 sm:my-8 lg:my-10 px-4 sm:px-0 justify-between items-center gap-4">
       <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
         <Profile className="rounded-full w-[70px] h-[70px] sm:w-[70px] sm:h-[70px] border-2 border-purple-500" />
 

@@ -1,14 +1,15 @@
 import Background from "./components/Background";
 // import { useTheme } from "./data/ThemeContext";
 import Home from "./pages/Home";
+import ReactLenis from "lenis/react";
 
 function App() {
   // useTheme();
   return (
-    <div className="relative">
+    <ReactLenis root className="relative">
       <Background />
       <Home />
-    </div>
+    </ReactLenis>
   );
 }
 

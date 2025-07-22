@@ -8,7 +8,7 @@ import SkillsList from "../components/SkillsLists";
 const Home = () => {
   return (
     <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
-      <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] sm:py-30 py-25 flex flex-col sm:space-y-8 space-y-5">
+      <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] lg:max-w-[800px] sm:py-30 py-25 flex flex-col space-y-10 sm:space-y-12 lg:space-y-20">
         {/* Profile */}
         <ProfileBar />
         {/* Nav bar on bottom */}

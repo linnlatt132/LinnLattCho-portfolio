@@ -93,8 +93,8 @@ const NavBar = () => {
   /* JSX ------------------------------------------------------------- */
   return (
     <nav
-      className="fixed bottom-3 left-1/2 -translate-x-1/2
-                 bg-[#dfdff8] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
+      className="fixed bottom-0 left-1/2 -translate-x-1/2
+                 bg-[#f7bbff] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
                  rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6 shadow-2xs"
     >
       {/* desktop */}
@@ -113,7 +113,7 @@ const NavBar = () => {
       {showBox && (
         <div
           ref={boxRef}
-          className="absolute bottom-14 left-1/2 -translate-x-1/2
+          className="absolute bottom-12 left-1/2 -translate-x-1/2
                      flex flex-col gap-2
                      bg-[#dfdff8] dark:bg-gray-900
                      border border-zinc-300 rounded-lg
