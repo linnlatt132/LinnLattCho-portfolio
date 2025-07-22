@@ -119,7 +119,7 @@ const CertificateSection = () => {
               }}
               onMouseEnter={() => setHoveredCert(cert)}
               onMouseLeave={() => setHoveredCert(null)}
-              className="cursor-pointer px-3 py-2 rounded-md transition-colors duration-200 hover:bg-white/20 dark:hover:bg-zinc-700/30 border border-transparent hover:border-zinc-400 dark:hover:border-zinc-500"
+              className="cursor-pointer px-2 py-2 rounded-md transition-colors duration-200 hover:bg-white/20 dark:hover:bg-zinc-700/30 border border-transparent hover:border-zinc-400 dark:hover:border-zinc-500"
             >
               <a target="-blank" href="https:/www.w3schools.com">
                 {cert.title}

@@ -1,5 +1,9 @@
 import ProjectCard from "./ProjectCard";
 import Project from "../assets/images/porject.png";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ChevronsRight } from "lucide-react";
 
 const projects = [
   {
@@ -29,11 +33,28 @@ const projects = [
 ];
 
 const MyProjects = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(".project-card", {
+      y: 100,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }, []);
   return (
-    <div>
-      <ul>
+    <div ref={containerRef} className="relative px-4">
+      <ul className="relative">
         {projects.map((p, index) => (
-          <li key={index}>
+          <li
+            className="project-card sticky z-10"
+            key={index}
+            style={{
+              top: `${5 + index * 3}rem`,
+            }}
+          >
             <ProjectCard
               prjImg={p.img}
               prjName={p.title}
@@ -42,6 +63,9 @@ const MyProjects = () => {
           </li>
         ))}
       </ul>
+      <div className="flex space-x-9">
+        <p>Explore More Project</p> <ChevronsRight />
+      </div>
     </div>
   );
 };

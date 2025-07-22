@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <GlassCard className="relative p-5! sm:p-7!">
-      <div className="">
+      <div className="" >
         <div className="flex sm:flex-row-reverse sm:h-90 h-100 flex-col items-center align-middle">
           <img
             className="sm:w-[55%] ml-3 border-[0.5px] border-black/30 dark:border-white/50 sm:h-full h-3/4 w-3/4 object-cover rounded-xl"
