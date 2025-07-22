@@ -94,7 +94,7 @@ const NavBar = () => {
   return (
     <nav
       className="fixed bottom-10 left-1/2 -translate-x-1/2
-                 bg-[#f7bbff] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
+                 bg-[#f7cafc] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
                  rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6 shadow-2xs"
     >
       {/* desktop */}

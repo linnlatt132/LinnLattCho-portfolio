@@ -86,15 +86,15 @@ const MyProjects = () => {
       {/* Title */}
       <h2
         ref={titleRef}
-        className="text-4xl sm:text-5xl font-bold text-center mb-4"
+        className="text-2xl sm:text-3xl md:4xl font-bold text-center mb-4"
       >
-        My Projects
+        My Feature Projects
       </h2>
 
       {/* Description */}
       <p
         ref={descRef}
-        className="text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-5 text-lg"
+        className="text-center text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto mb-5 text-[16px] sm:text-[18px] md:text-[20px]"
       >
         A collection of personal and practice projects I've built with React and
         modern tools.
@@ -122,7 +122,7 @@ const MyProjects = () => {
       {/* Explore More */}
       <div
         ref={exploreRef}
-        className="flex space-x-5 items-center align-middle justify-center mt-9 font-mono text-[12px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
+        className="flex space-x-5 items-center align-middle justify-center mt-9 font-mono text-[14px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
       >
         <p>Explore More Project</p> <ChevronsRight />
       </div>

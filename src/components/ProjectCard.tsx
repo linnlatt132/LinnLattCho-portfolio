@@ -1,6 +1,10 @@
+import { useTheme } from "../data/ThemeContext";
 import GlassCard from "./GlassCard";
-// import Project from "../assets/images/porject.png";
 import type React from "react";
+import GitHub from "../assets/icons/Skills/github.svg?react";
+import GitHubWhite from "../assets/icons/Skills/dark/gitHubWhite.svg?react";
+import Globe from "../assets/icons/Skills/dark/GlobeDark.svg?react";
+import GlobeWhite from "../assets/icons/Skills/GlobeWhite.svg?react";
 
 interface ProjectProps {
   prjImg: string;
@@ -9,6 +13,16 @@ interface ProjectProps {
   sourceLink?: string;
   extandLink?: string;
 }
+interface BtnProps {
+  IconLight: React.FC<React.SVGProps<SVGSVGElement>>;
+  IconDark: React.FC<React.SVGProps<SVGSVGElement>>;
+}
+const Icons = ({ IconLight, IconDark }: BtnProps) => {
+  const { theme } = useTheme();
+  const Icon = theme === "dark" ? IconDark : IconLight;
+  return <Icon className="w-5 h-5 p-[1px]" />;
+};
+
 const ProjectCard: React.FC<ProjectProps> = ({
   prjImg,
   prjName,
@@ -31,11 +45,18 @@ const ProjectCard: React.FC<ProjectProps> = ({
               {prjDetail}
             </p>
             <div className="flex sm:gap-5 gap-20 text-[14px] pt-5">
-              <button className="border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
-                Source
+              <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
+                <span>
+                  <Icons IconLight={GitHub} IconDark={GitHubWhite} />
+                </span>
+                <span>Source</span>
               </button>
-              <button className="border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
-                Live Site
+
+              <button className="flex items-center justify-center align-middle gap-2 border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
+                <span>
+                  <Icons IconLight={Globe} IconDark={GlobeWhite} />
+                </span>
+                <span>Live</span>
               </button>
             </div>
           </div>
