@@ -7,6 +7,7 @@ import { ChevronsRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const projects = [
   {
@@ -41,52 +42,119 @@ const MyProjects = () => {
   const descRef = useRef(null);
   const exploreRef = useRef(null);
 
-  useGSAP(() => {
-    gsap.from(titleRef.current, {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
-    gsap.from(descRef.current, {
-      y: -30,
-      opacity: 0,
-      delay: 0.2,
-      duration: 1,
-      ease: "power3.out",
-    });
-    // cards animation
-    gsap.from(".project-card", {
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1,
-      ease: "power3.out",
-    });
-    gsap.fromTo(
-      exploreRef.current,
-      { y: 10, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
+  useGSAP(
+    // for explore
+    () => {
+      const tlExp = gsap.timeline({
         scrollTrigger: {
           trigger: exploreRef.current,
-          start: "top 90%",
-          end: "top 10%",
-          toggleActions: "play reverse play reverse",
+          start: "top 80%",
+          end: "top 20%",
+          scrub: true,
+          // markers: true,
         },
-        duration: 1.5,
-        ease: "power2.out",
-      }
-    );
-  }, []);
+      });
+
+      // Animate in from bottom to middle
+      tlExp.fromTo(
+        exploreRef.current,
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "none",
+          duration: 1 / 3, // First third of scroll
+        }
+      );
+
+      // Stay still in center (no changes)
+      tlExp.to(exploreRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 1 / 3,
+        ease: "none",
+      });
+
+      // Animate out to top
+      tlExp.to(exploreRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 1 / 3,
+        ease: "none",
+      });
+
+      // === h2 scroll animation timeline ===
+      const tlH2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 100%",
+          end: "top 0%",
+          scrub: true,
+          // markers: true,
+        },
+      });
+
+      tlH2
+        .fromTo(
+          titleRef.current,
+          { scale: 0.8, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1 / 3, ease: "none" }
+        )
+        .to(titleRef.current, {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "none",
+        })
+        .to(titleRef.current, {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          ease: "none",
+        });
+
+      // === p (description) scroll animation timeline ===
+      const tlDesc = gsap.timeline({
+        scrollTrigger: {
+          trigger: descRef.current,
+          start: "top 100%",
+          end: "top 0%",
+          scrub: true,
+          // markers: true,
+        },
+      });
+
+      tlDesc
+        .fromTo(
+          descRef.current,
+          { scale: 0.8, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1 / 3, ease: "none" }
+        )
+        .to(descRef.current, {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "none",
+        })
+        .to(descRef.current, {
+          scale: 0.8,
+          opacity: 0,
+          duration: 1,
+          ease: "none",
+        });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <div ref={containerRef} className="relative px-4">
       {/* Title */}
       <h2
         ref={titleRef}
-        className="text-2xl sm:text-3xl md:4xl font-bold text-center mb-4"
+        className="text-2xl sm:text-3xl md:4xl font-semibold text-center mb-4"
       >
         My Feature Projects
       </h2>

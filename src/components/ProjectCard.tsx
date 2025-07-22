@@ -45,14 +45,14 @@ const ProjectCard: React.FC<ProjectProps> = ({
               {prjDetail}
             </p>
             <div className="flex sm:gap-5 gap-20 text-[14px] pt-5">
-              <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
+              <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
                 <span>
                   <Icons IconLight={GitHub} IconDark={GitHubWhite} />
                 </span>
                 <span>Source</span>
               </button>
 
-              <button className="flex items-center justify-center align-middle gap-2 border-[0.5px] w-22 hover:cursor-pointer hover:shadow-black/50 shadow-md rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
+              <button className="flex items-center justify-center align-middle gap-2 border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
                 <span>
                   <Icons IconLight={Globe} IconDark={GlobeWhite} />
                 </span>

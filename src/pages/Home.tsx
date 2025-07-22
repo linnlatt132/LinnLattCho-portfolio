@@ -20,7 +20,7 @@ const Home = () => {
         <CertificateSection />
         {/* Projects */}
         <MyProjects />
-        {/* <div>
+        <div>
           <p className="">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nisi
             soluta corrupti inventore suscipit facilis sequi ea neque voluptate
@@ -69,7 +69,7 @@ const Home = () => {
             voluptates, quaerat repudiandae molestiae odit corrupti. Blanditiis
             alias ad voluptatem laudantium repudiandae incidunt. A, eveniet!
           </p>
-        </div> */}
+        </div>
 
         {/* Contant Me */}
         <div id="contant"></div>
