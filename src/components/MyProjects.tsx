@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ChevronsRight } from "lucide-react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -34,8 +37,25 @@ const projects = [
 
 const MyProjects = () => {
   const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const descRef = useRef(null);
+  const exploreRef = useRef(null);
 
   useGSAP(() => {
+    gsap.from(titleRef.current, {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+    gsap.from(descRef.current, {
+      y: -30,
+      opacity: 0,
+      delay: 0.2,
+      duration: 1,
+      ease: "power3.out",
+    });
+    // cards animation
     gsap.from(".project-card", {
       y: 100,
       opacity: 0,
@@ -43,16 +63,51 @@ const MyProjects = () => {
       duration: 1,
       ease: "power3.out",
     });
+    gsap.fromTo(
+      exploreRef.current,
+      { y: 10, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+          trigger: exploreRef.current,
+          start: "top 90%",
+          end: "top 10%",
+          toggleActions: "play reverse play reverse",
+        },
+        duration: 1.5,
+        ease: "power2.out",
+      }
+    );
   }, []);
+
   return (
     <div ref={containerRef} className="relative px-4">
+      {/* Title */}
+      <h2
+        ref={titleRef}
+        className="text-4xl sm:text-5xl font-bold text-center mb-4"
+      >
+        My Projects
+      </h2>
+
+      {/* Description */}
+      <p
+        ref={descRef}
+        className="text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-5 text-lg"
+      >
+        A collection of personal and practice projects I've built with React and
+        modern tools.
+      </p>
+
+      {/* Projects List */}
       <ul className="relative">
         {projects.map((p, index) => (
           <li
             className="project-card sticky z-10"
             key={index}
             style={{
-              top: `${5 + index * 3}rem`,
+              top: `${3 + index * 3}rem`,
             }}
           >
             <ProjectCard
@@ -63,7 +118,12 @@ const MyProjects = () => {
           </li>
         ))}
       </ul>
-      <div className="flex space-x-9">
+
+      {/* Explore More */}
+      <div
+        ref={exploreRef}
+        className="flex space-x-5 items-center align-middle justify-center mt-9 font-mono text-[12px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
+      >
         <p>Explore More Project</p> <ChevronsRight />
       </div>
     </div>
