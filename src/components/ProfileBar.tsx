@@ -12,8 +12,8 @@ const ProfileBar = () => {
             <span className="tracking-tight">Hello! I'm</span> Linn Latt Cho
           </h1>
 
-          <div className="mt-2 flex items-center space-x-2 border-dashed border rounded-full border-black/10 dark:border-white/10 text-black/60 dark:text-white/60 px-3 py-1 text-sm sm:text-base">
-            <div className="w-[8px] h-[8px] rounded-full bg-green-600 dark:bg-green-500 animate-ping"></div>
+          <div className="mt-2 flex items-center space-x-2 border-dashed border rounded-full border-black/50 dark:border-white/10 text-black/70 dark:text-white/60 px-3 py-1 text-sm sm:text-base">
+            <div className="w-[8px] h-[8px] rounded-full bg-green-800 dark:bg-green-500 animate-ping"></div>
             <p className="font-extralight text-[15px] tracking-tight  ">
               Available for work!
             </p>

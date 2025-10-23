@@ -16,7 +16,7 @@ export type SkillItem = {
 
 const SkillsList = () => {
   const container = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme()
+  const { theme } = useTheme();
 
   useGSAP(
     () => {
@@ -60,7 +60,7 @@ const SkillsList = () => {
       // 4.  Let useGSAP clean up automatically when the component unmounts.
       //     Nothing to return here—gsap/react will revert all the tweens for us.
     },
-    { scope: container }
+    { scope: container, dependencies: [theme] }
   );
 
   /* -------------------- render helpers -------------------- */

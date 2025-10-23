@@ -26,7 +26,7 @@ const SocialLink = ({ href, IconLight, IconDark, label }: SocialLinkProps) => {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="hover:opacity-60 transition-opacity"
+      className="glass-shine hover:opacity-60 transition-opacity"
     >
       <Icon className="w-6 h-6 sm:w-7 sm:h-7 border border-zinc-600 dark:border-zinc-400 rounded-[10px] p-1" />
     </a>

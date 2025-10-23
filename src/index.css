@@ -4,4 +4,64 @@
 .font-secondary {
   font-family: mono;
   font-weight: 200;
+
+}
+/* ✨ Glass shine effect for icons */
+/* ✨ Glass shine effect for icons */
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.glass-shine::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: translateX(-100%) rotate(15deg);
+  animation: shine 3s linear infinite;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+/* 🌞 Light theme: use a slightly darker shine so it's visible */
+@media (prefers-color-scheme: light) {
+  .glass-shine::after {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(251, 251, 252, 0.5) 90%, /* soft bluish tint for visibility */
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
+/* 🌙 Dark theme: keep bright white for contrast */
+@media (prefers-color-scheme: dark) {
+  .glass-shine::after {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(15deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(15deg);
+  }
 }
