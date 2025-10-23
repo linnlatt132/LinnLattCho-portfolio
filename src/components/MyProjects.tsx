@@ -5,9 +5,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ChevronsRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollSmoother);
 
 const projects = [
   {
@@ -42,14 +42,16 @@ const MyProjects = () => {
   const descRef = useRef(null);
   const exploreRef = useRef(null);
 
+
+
   useGSAP(
     // for explore
     () => {
       const tlExp = gsap.timeline({
         scrollTrigger: {
           trigger: exploreRef.current,
-          start: "top 80%",
-          end: "top 20%",
+          start: "top 90%",
+          end: "top 10%",
           scrub: true,
           // markers: true,
         },
@@ -149,8 +151,28 @@ const MyProjects = () => {
     { scope: containerRef }
   );
 
+  useGSAP(() => {
+    const cards = gsap.utils.toArray<HTMLElement>(".project-card");
+
+    cards.forEach((card, index) => {
+      gsap.to(card, {
+        scale: 0.8 + 0.2 * (index / (cards.length - 1)),
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top" + (15 + 35 * index),
+          end: "bottom bottom",
+          endTrigger: ".container",
+          scrub: true,
+          pinSpacing: false,
+          invalidateOnRefresh: true,
+        },
+      });
+    });
+  });
+
   return (
-    <div ref={containerRef} className="relative px-4">
+    <div ref={containerRef} className="container relative px-4">
       {/* Title */}
       <h2
         ref={titleRef}
@@ -175,7 +197,7 @@ const MyProjects = () => {
             className="project-card sticky z-10"
             key={index}
             style={{
-              top: `${3 + index * 3}rem`,
+              top: `${2 + index * 2}rem`,
             }}
           >
             <ProjectCard

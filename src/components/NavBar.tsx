@@ -15,7 +15,7 @@ gsap.registerPlugin(useGSAP);
 /* nav items ------------------------------------------------------- */
 const navItems = [
   { id: 1, label: "Home", icon: Home, path: "/" },
-  { id: 2, label: "Email", icon: Mail, path: "/email" },
+  { id: 2, label: "Contact Me", icon: Mail, path: "/email" },
   { id: 3, label: "Projects", icon: PanelsTopLeft, path: "/projects" },
 ];
 
