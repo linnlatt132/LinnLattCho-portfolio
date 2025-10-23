@@ -12,6 +12,7 @@ interface ProjectProps {
   prjDetail: string;
   sourceLink?: string;
   extandLink?: string;
+  langs?: string[];
 }
 interface BtnProps {
   IconLight: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -27,6 +28,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   prjImg,
   prjName,
   prjDetail,
+  langs,
 }) => {
   return (
     <GlassCard className="relative p-5! sm:p-7!">
@@ -44,7 +46,23 @@ const ProjectCard: React.FC<ProjectProps> = ({
             <p className="sm:text-[14px] text-[12px] font-mono font-extralight leading-tight text-justify sm:text-start">
               {prjDetail}
             </p>
-            <div className="flex sm:gap-5 gap-20 text-[14px] pt-5">
+
+            {/* sources */}
+            {langs && (
+              <div className="flex flex-wrap gap-2 mt-2 justify-center sm:justify-start">
+                {langs.map((lang, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-[2px] text-[12px] bg-gray-500/90 text-white dark:text-black dark:bg-gray-200/70 rounded-md "
+                  >
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            {/* buttons */}
+            <div className="flex sm:gap-5 gap-20 text-[14px] pt-3">
               <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
                 <span>
                   <Icons IconLight={GitHub} IconDark={GitHubWhite} />
