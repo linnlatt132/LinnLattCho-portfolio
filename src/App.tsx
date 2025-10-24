@@ -1,14 +1,21 @@
+import { Routes, Route } from "react-router-dom";
 import Background from "./components/Background";
-// import { useTheme } from "./data/ThemeContext";
 import Home from "./pages/Home";
 import ReactLenis from "lenis/react";
+import ProjectPage from "./pages/ProjectsPage";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
-  // useTheme();
   return (
     <ReactLenis root className="relative">
       <Background />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectPage />} />
+      </Routes>
+      <NavBar />
+      <Footer />
     </ReactLenis>
   );
 }

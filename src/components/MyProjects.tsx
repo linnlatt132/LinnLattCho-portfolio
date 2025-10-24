@@ -6,10 +6,11 @@ import gsap from "gsap";
 import { ChevronsRight } from "lucide-react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollSmoother);
 
-const projects = [
+export const projects = [
   {
     title: "Project1",
     description:
@@ -45,6 +46,8 @@ const MyProjects = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const exploreRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useGSAP(
     // for explore
@@ -215,6 +218,7 @@ const MyProjects = () => {
       {/* Explore More */}
       <div
         ref={exploreRef}
+        onClick={() => navigate("/projects")}
         className="flex space-x-5 items-center align-middle justify-center mt-9 font-mono text-[14px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
       >
         <p>Explore More Project</p> <ChevronsRight />

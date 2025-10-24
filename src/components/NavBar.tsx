@@ -92,36 +92,39 @@ const NavBar = () => {
 
   /* JSX ------------------------------------------------------------- */
   return (
-    <nav
-      className="fixed bottom-10 left-1/2 -translate-x-1/2
-                 bg-[#f7cafc] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
-                 rounded-[15px] px-4 py-2 z-30 flex items-center sm:space-x-6 shadow-2xs"
-    >
-      {/* desktop */}
-      <div className="hidden sm:flex space-x-6">{navItems.map(renderItem)}</div>
-
-      {/* mobile menu toggle */}
-      <button
-        className="sm:hidden flex items-center gap-1 focus:outline-none hover:cursor-pointer cursor-default"
-        onClick={() => setOpen((p) => !p)}
+    <nav className="fixed bottom-10 w-full flex justify-center z-30">
+      <div
+        className="bg-[#f7cafc] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
+               rounded-[15px] px-5 py-3 flex items-center sm:space-x-6 shadow-2xs"
       >
-        {open ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
-        <span className="text-sm font-medium">Menu</span>
-      </button>
-
-      {/* mobile dropdown (animated) */}
-      {showBox && (
-        <div
-          ref={boxRef}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2
-                     flex flex-col gap-2
-                     bg-[#dfdff8] dark:bg-gray-900
-                     border border-zinc-300 rounded-lg
-                     p-4 shadow-xl z-40"
-        >
+        {/* desktop */}
+        <div className="hidden sm:flex space-x-6">
           {navItems.map(renderItem)}
         </div>
-      )}
+
+        {/* mobile menu toggle */}
+        <button
+          className="sm:hidden flex items-center gap-1 focus:outline-none hover:cursor-pointer cursor-default dark:text-white"
+          onClick={() => setOpen((p) => !p)}
+        >
+          {open ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
+          <span className="text-sm font-medium">Menu</span>
+        </button>
+
+        {/* mobile dropdown (animated) */}
+        {showBox && (
+          <div
+            ref={boxRef}
+            className="absolute bottom-12 left-1/2 -translate-x-1/2
+                   flex flex-col gap-2
+                   bg-[#dfdff8] dark:text-white dark:bg-gray-900
+                   border border-zinc-300 rounded-lg
+                   p-4 shadow-xl z-40"
+          >
+            {navItems.map(renderItem)}
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

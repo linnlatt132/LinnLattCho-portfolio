@@ -9,19 +9,21 @@ const Footer = () => {
   });
 
   return (
-    <footer className="w-full">
-      <GlassCard>
-        <div className="flex sm:text-[14px] md:text-[18px] lg:text-[20px] flex-col space-y-5 sm:flex-row sm:space-y-0 items-center justify-center sm:justify-between h-full">
-          <p className="font-semibold flex items-center h-full">
-            © {new Date().getFullYear()} Linn Latt Cho. All rights reserved.
-          </p>
+    <footer className="w-full mb-28 transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 dark:text-white">
+      <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] lg:max-w-[800px] ">
+        <GlassCard>
+          <div className="flex text-[11px] sm:text-[14px] lg:text-[18px] items-center align-middle justify-between h-full">
+            <p className=" font-semibold flex items-center h-full">
+              © {new Date().getFullYear()} Linn Latt Cho. All rights reserved.
+            </p>
 
-          <p className=" text-zinc-500 dark:text-zinc-300 flex gap-2 items-center h-full">
-            <span> Last updated:</span>{" "}
-            <span className="italic">{formattedDate}</span>
-          </p>
-        </div>
-      </GlassCard>
+            <p className=" text-zinc-500  dark:text-zinc-300 flex gap-2 items-center h-full">
+              <span> Last updated:</span>{" "}
+              <span className="italic">{formattedDate}</span>
+            </p>
+          </div>
+        </GlassCard>
+      </div>
     </footer>
   );
 };

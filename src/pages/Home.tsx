@@ -1,8 +1,6 @@
 import AboutMe from "../components/AboutMe";
 import CertificateSection from "../components/CerfificateSection";
-import Footer from "../components/Footer";
 import MyProjects from "../components/MyProjects";
-import NavBar from "../components/NavBar";
 import ProfileBar from "../components/ProfileBar";
 import SkillsList from "../components/SkillsLists";
 import { useEffect, useRef, useState } from "react";
@@ -105,9 +103,10 @@ const Home = () => {
         </div>
       )}
       <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
-        <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] lg:max-w-[800px] sm:pt-30 sm:pb-10 pb-4 pt-25 flex flex-col space-y-10 sm:space-y-12 lg:space-y-20">
+        <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] lg:max-w-[800px] sm:pt-20 sm:pb-10 pb-4 pt-25 flex flex-col space-y-10 sm:space-y-12 lg:space-y-20">
           {/* Profile */}
           <ProfileBar />
+
           {/* About Me */}
           <AboutMe />
           {/* Skills */}
@@ -122,11 +121,6 @@ const Home = () => {
 
           {/* Contant Me */}
           <div id="contant"></div>
-
-          {/* Footer */}
-          <Footer />
-          {/* Nav bar on bottom */}
-          <NavBar />
         </div>
       </div>
     </>
