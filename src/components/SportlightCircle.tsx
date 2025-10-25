@@ -20,7 +20,7 @@ export const SpotlightCircle: React.FC<SpotlightCircleProps> = ({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
-  const spotlightColor = theme === "dark" ? "#07ab59" : "#a855f7"; // purple glow
+  const spotlightColor = theme === "dark" ? "#00FFFF" : "#a855f7"; // purple glow
   const bgColor = theme === "dark" ? "bg-zinc-300/30" : "bg-blue-200";
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import StarBorder from "./StarBorder";
 
 gsap.registerPlugin(useGSAP);
 
@@ -93,10 +94,11 @@ const NavBar = () => {
   /* JSX ------------------------------------------------------------- */
   return (
     <nav className="fixed bottom-10 w-full flex justify-center z-30">
-      <div
-        className="bg-[#f7cafc] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
+      <StarBorder className="custom-class" speed="7s">
+        {/* <div
+          className="bg-[#f7cafc] dark:bg-gray-900 border border-zinc-400 dark:border-zinc-300
                rounded-[15px] px-5 py-3 flex items-center sm:space-x-6 shadow-2xs"
-      >
+        > */}
         {/* desktop */}
         <div className="hidden sm:flex space-x-6">
           {navItems.map(renderItem)}
@@ -124,7 +126,8 @@ const NavBar = () => {
             {navItems.map(renderItem)}
           </div>
         )}
-      </div>
+        {/* </div> */}
+      </StarBorder>
     </nav>
   );
 };
