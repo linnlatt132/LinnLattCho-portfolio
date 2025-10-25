@@ -16,7 +16,7 @@ gsap.registerPlugin(useGSAP);
 /* nav items ------------------------------------------------------- */
 const navItems = [
   { id: 1, label: "Home", icon: Home, path: "/" },
-  { id: 2, label: "Contact Me", icon: Mail, path: "/email" },
+  { id: 2, label: "Contact Me", icon: Mail, path: "/contants" },
   { id: 3, label: "Projects", icon: PanelsTopLeft, path: "/projects" },
 ];
 
@@ -112,22 +112,22 @@ const NavBar = () => {
           {open ? <CloseIcon size={24} /> : <MenuIcon size={24} />}
           <span className="text-sm font-medium">Menu</span>
         </button>
+      </StarBorder>
 
-        {/* mobile dropdown (animated) */}
-        {showBox && (
-          <div
-            ref={boxRef}
-            className="absolute bottom-12 left-1/2 -translate-x-1/2
-                   flex flex-col gap-2
-                   bg-[#dfdff8] dark:text-white dark:bg-gray-900
-                   border border-zinc-300 rounded-lg
-                   p-4 shadow-xl z-40"
-          >
+      {/* mobile dropdown (animated) */}
+      {showBox && (
+        <div
+          ref={boxRef}
+          className="sm:hidden absolute  bottom-14 left-1/2 -translate-x-1/2 z-50"
+        >
+          <StarBorder speed="7s" className="w-38">
+          <div className="flex flex-col gap-2 text-center">
             {navItems.map(renderItem)}
           </div>
-        )}
-        {/* </div> */}
-      </StarBorder>
+          </StarBorder>
+        </div>
+      )}
+      {/* </div> */}
     </nav>
   );
 };

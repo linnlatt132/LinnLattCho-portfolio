@@ -20,7 +20,7 @@ const PrjPageCards: React.FC<ProjectProps> = ({
           src={prjImg}
           alt={prjName}
         />
-        <div className="flex flex-col items-start gap-3 mt-2 w-full">
+        <div className="flex flex-col items-start gap-3 mt-2 w-full px-1">
           <h1 className="sm:text-2xl sm:font-bold text-xl font-semibold">
             {prjName}
           </h1>
@@ -43,7 +43,7 @@ const PrjPageCards: React.FC<ProjectProps> = ({
           )}
 
           {/* buttons */}
-          <div className="flex w-full justify-between text-[14px] pt-2">
+          <div className="flex w-full justify-between text-[14px] pt-2 pb-3">
             <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
               <span>
                 <Icons IconLight={GitHub} IconDark={GitHubWhite} />

@@ -177,7 +177,7 @@ const MyProjects = () => {
   });
 
   return (
-    <div ref={containerRef} className="container relative px-4">
+    <div ref={containerRef} className="container relative">
       {/* Title */}
       <h2
         ref={titleRef}

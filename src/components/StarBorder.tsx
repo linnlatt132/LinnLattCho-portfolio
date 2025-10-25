@@ -55,7 +55,7 @@ const StarBorder = <T extends React.ElementType = "button">({
         }}
       ></div>
       <div
-        className="relative bg-[#f5e7f7] dark:bg-gray-900 border border-zinc-500/20 dark:border-zinc-300/9
+        className="relative bg-[#edffcb] dark:bg-gray-900 border border-zinc-500/20 dark:border-zinc-300/9
                rounded-[15px] z-[1] px-5 py-3 flex items-center sm:space-x-6 shadow-2xs"
         // className="inner-content"
       >
