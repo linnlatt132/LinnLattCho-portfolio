@@ -1,5 +1,5 @@
 import { projects } from "../components/MyProjects";
-import ProjectCard from "../components/ProjectCard";
+import PrjPageCards from "../components/PrjPageCards";
 
 const ProjectPage = () => {
   const prjs = projects;
@@ -15,10 +15,10 @@ const ProjectPage = () => {
           </div>
         </div>
         {/* You can reuse ProjectCard list here */}
-        <ul className="">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {prjs.map((p, index) => (
             <li key={index}>
-              <ProjectCard
+              <PrjPageCards
                 prjImg={p.img}
                 prjName={p.title}
                 prjDetail={p.description}

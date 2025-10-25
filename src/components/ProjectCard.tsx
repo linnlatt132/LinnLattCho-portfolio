@@ -6,7 +6,7 @@ import GitHubWhite from "../assets/icons/Skills/dark/gitHubWhite.svg?react";
 import Globe from "../assets/icons/Skills/dark/GlobeDark.svg?react";
 import GlobeWhite from "../assets/icons/Skills/GlobeWhite.svg?react";
 
-interface ProjectProps {
+export interface ProjectProps {
   prjImg: string;
   prjName: string;
   prjDetail: string;
@@ -14,11 +14,11 @@ interface ProjectProps {
   extandLink?: string;
   langs?: string[];
 }
-interface BtnProps {
+export interface BtnProps {
   IconLight: React.FC<React.SVGProps<SVGSVGElement>>;
   IconDark: React.FC<React.SVGProps<SVGSVGElement>>;
 }
-const Icons = ({ IconLight, IconDark }: BtnProps) => {
+export const Icons = ({ IconLight, IconDark }: BtnProps) => {
   const { theme } = useTheme();
   const Icon = theme === "dark" ? IconDark : IconLight;
   return <Icon className="w-5 h-5 p-[1px]" />;
@@ -35,15 +35,15 @@ const ProjectCard: React.FC<ProjectProps> = ({
       <div className="">
         <div className="flex sm:flex-row-reverse sm:h-90 h-100 flex-col items-center align-middle">
           <img
-            className="sm:w-[55%] ml-3 border-[0.5px] border-black/30 dark:border-white/50 sm:h-full h-3/4 w-3/4 object-cover rounded-xl"
+            className="sm:w-[55%] ml-3 border-[0.5px] border-black/30 dark:border-white/50 sm:h-full h-[40%] w-full object-cover rounded-xl"
             src={prjImg}
             alt={prjName}
           />
-          <div className="flex flex-col sm:items-start items-center sm:p-0 pt-3 gap-3 sm:mt-0 mt-2 sm:mx-0 mx-4 w-full">
+          <div className="flex flex-col sm:items-start items-center sm:p-0 pt-3 gap-2 sm:gap-3 sm:mt-0 mt-2 sm:mx-0 mx-4 w-full">
             <h1 className="sm:text-2xl sm:font-bold text-xl font-semibold">
               {prjName}
             </h1>
-            <p className="sm:text-[14px] text-[12px] font-mono font-extralight leading-tight text-justify sm:text-start">
+            <p className="sm:text-[14px] text-[10px] font-mono font-extralight leading-tight text-justify sm:text-start">
               {prjDetail}
             </p>
 

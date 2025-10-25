@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="w-full mb-28 transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 dark:text-white">
       <div className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-[700px] lg:max-w-[800px] ">
         <GlassCard>
-          <div className="flex text-[11px] sm:text-[14px] lg:text-[18px] items-center align-middle justify-between h-full">
+          <div className="flex text-[8px] sm:text-[13px] lg:text-[18px] items-center align-middle justify-between h-full">
             <p className=" font-semibold flex items-center h-full">
               © {new Date().getFullYear()} Linn Latt Cho. All rights reserved.
             </p>
