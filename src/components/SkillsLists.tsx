@@ -74,7 +74,7 @@ const SkillsList = () => {
         return (
           <div
             key={`${name}-${theme}`} // force re-render of icon block
-            className="flex items-center space-x-1 text-xs hover:scale-105 hover:cursor-default transition-transform"
+            className="flex font-mono items-center space-x-1 text-xs hover:scale-105 hover:cursor-default transition-transform"
           >
             <IconComponent
               key={`${name}-icon-${theme}`} // 🧠 this is crucial!

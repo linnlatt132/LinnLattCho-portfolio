@@ -1,7 +1,7 @@
 import GlassCard from "./GlassCard";
 
 const Footer = () => {
-  const lastUpdated = new Date("2025-07-22T12:00:00"); // change to your real update time
+  const lastUpdated = new Date("2025-11-11T22:00:00"); // change to your real update time
   const formattedDate = lastUpdated.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -19,7 +19,9 @@ const Footer = () => {
 
             <p className=" text-zinc-500  dark:text-zinc-300 flex gap-2 items-center h-full">
               <span> Last updated:</span>{" "}
-              <span className="italic">{formattedDate}</span>
+              <span className="italic text-[7px] sm:text-[12px] lg:text-[17px]">
+                {formattedDate}
+              </span>
             </p>
           </div>
         </GlassCard>

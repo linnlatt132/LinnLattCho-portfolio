@@ -5,6 +5,8 @@ import ProfileBar from "../components/ProfileBar";
 import SkillsList from "../components/SkillsLists";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Experiences from "../components/Experiences";
+import ContantInfo from "./ContantInfo";
 
 const Home = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -112,15 +114,23 @@ const Home = () => {
           {/* Skills */}
           <SkillsList />
           {/* Certificates */}
+
+          {/* Projects */}
+          <MyProjects />
+
+          {/* <ExperienceSection /> */}
+          <Experiences />
+
+          {/* certi */}
           <CertificateSection
             setShowCursor={setShowCursor}
             setCursorImage={setCursorImage}
           />
-          {/* Projects */}
-          <MyProjects />
 
-          {/* Contant Me */}
-          <div id="contant"></div>
+          {/* Contant Info */}
+          <div id="contant" className="my-0!">
+            <ContantInfo />
+          </div>
         </div>
       </div>
     </>

@@ -219,7 +219,7 @@ const MyProjects = () => {
       <div
         ref={exploreRef}
         onClick={() => navigate("/projects")}
-        className="flex space-x-5 items-center align-middle justify-center mt-9 font-mono text-[14px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
+        className="flex space-x-5 items-center align-middle justify-center my-9 font-mono text-[14px] sm:text-[16px] md:text-[20px] lg:text-2xl hover:cursor-pointer"
       >
         <p>Explore More Project</p> <ChevronsRight />
       </div>
