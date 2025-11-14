@@ -15,7 +15,7 @@ const ProjectPage = () => {
           </div>
         </div>
         {/* You can reuse ProjectCard list here */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <ul className="grid grid-cols-1 gap-5">
           {prjs.map((p, index) => (
             <li key={index}>
               <PrjPageCards
