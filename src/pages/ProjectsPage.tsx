@@ -1,6 +1,6 @@
 import DarkLight from "../components/DarkLight";
-import { projects } from "../components/MyProjects";
 import PrjPageCards from "../components/PrjPageCards";
+import { projects } from "../data/projects";
 
 const ProjectPage = () => {
   const prjs = projects;
@@ -25,8 +25,10 @@ const ProjectPage = () => {
               <PrjPageCards
                 prjImg={p.img}
                 prjName={p.title}
-                prjDetail={p.description}
+                prjDetail={p.detaildes}
                 langs={p.lang}
+                gitLink={p.gitLink}
+                liveLink={p.liveLink}
               />
             </li>
           ))}

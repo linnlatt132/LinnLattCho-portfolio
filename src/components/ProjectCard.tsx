@@ -5,15 +5,9 @@ import GitHub from "../assets/icons/Skills/github.svg?react";
 import GitHubWhite from "../assets/icons/Skills/dark/gitHubWhite.svg?react";
 import Globe from "../assets/icons/Skills/dark/GlobeDark.svg?react";
 import GlobeWhite from "../assets/icons/Skills/GlobeWhite.svg?react";
+import type { ProjectProps } from "../data/projects";
 
-export interface ProjectProps {
-  prjImg: string;
-  prjName: string;
-  prjDetail: string;
-  sourceLink?: string;
-  extandLink?: string;
-  langs?: string[];
-}
+
 export interface BtnProps {
   IconLight: React.FC<React.SVGProps<SVGSVGElement>>;
   IconDark: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -29,6 +23,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   prjName,
   prjDetail,
   langs,
+  gitLink,
+  liveLink,
 }) => {
   return (
     <GlassCard className="relative p-5! sm:p-7!">
@@ -63,19 +59,30 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
             {/* buttons */}
             <div className="flex sm:gap-5 gap-20 text-[14px] pt-3">
-              <button className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1">
-                <span>
-                  <Icons IconLight={GitHub} IconDark={GitHubWhite} />
-                </span>
-                <span>Source</span>
-              </button>
-
-              <button className="flex items-center justify-center align-middle gap-2 border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1">
-                <span>
-                  <Icons IconLight={Globe} IconDark={GlobeWhite} />
-                </span>
-                <span>Live</span>
-              </button>
+              {gitLink && (
+                <a
+                  target="_blank"
+                  href={gitLink}
+                  className="flex items-center justify-center align-middle gap-2  border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50 p-1"
+                >
+                  <span>
+                    <Icons IconLight={GitHub} IconDark={GitHubWhite} />
+                  </span>
+                  <span>Source</span>
+                </a>
+              )}
+              {liveLink && (
+                <a
+                  target="_blank"
+                  href={liveLink}
+                  className="flex items-center justify-center align-middle gap-2 border-[0.5px] w-22 hover:cursor-pointer  rounded-[10px] border-black/50 hover:bg-black/5 hover:dark:bg-white/5 dark:border-white/50  p-1"
+                >
+                  <span>
+                    <Icons IconLight={Globe} IconDark={GlobeWhite} />
+                  </span>
+                  <span>Live</span>
+                </a>
+              )}
             </div>
           </div>
         </div>
