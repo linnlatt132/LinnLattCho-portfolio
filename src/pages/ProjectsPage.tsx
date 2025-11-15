@@ -66,14 +66,19 @@ const ProjectPage = () => {
           />
 
           {/* Sort Select */}
-          <select
-            value={sortBy}
-            onChange={handleSortChange}
-            className="py-3 px-5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-black/10 dark:border-gray-600 dark:text-white appearance-none cursor-pointer"
-          >
-            <option value="newest">Newest</option>
-            <option value="latest">Oldest</option>
-          </select>
+          <div className="relative">
+            <select
+              value={sortBy}
+              onChange={handleSortChange}
+              className="py-3 pr-9 px-5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-black/10 dark:border-gray-600 dark:text-white appearance-none cursor-pointer"
+            >
+              <option value="newest">Newest</option>
+              <option value="latest">Oldest</option>
+            </select>
+            <span className="pointer-events-none absolute right-3 top-3.5 ">
+              ▼
+            </span>
+          </div>
         </div>
 
         {/* You can reuse ProjectCard list here */}
