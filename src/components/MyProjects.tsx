@@ -161,13 +161,13 @@ const MyProjects = () => {
         ref={descRef}
         className="text-center text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto mb-5 text-[16px] sm:text-[18px] md:text-[20px]"
       >
-        A collection of personal and practice projects I've built with React and
-        modern tools.
+        A curated selection of my most recent work, built to solve real-world
+        problems using modern web technologies and best coding practices.
       </p>
 
       {/* Projects List */}
       <ul className="relative">
-        {projects.map((p, index) => (
+        {projects.slice(-4).map((p, index) => (
           <li
             className="project-card sticky z-10"
             key={index}
