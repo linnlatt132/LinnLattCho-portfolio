@@ -60,73 +60,46 @@ const NavBar = () => {
   );
 
   /* ✅ observe scroll position to update active link */
-  /* scroll detection */
   useEffect(() => {
     if (location.pathname !== "/") return;
 
     const contactEl = document.getElementById("contant");
 
     const onScroll = () => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
+      if (!contactEl) return;
 
-      if (contactEl) {
-        const rect = contactEl.getBoundingClientRect();
-
-        const inContact = rect.top <= vh * 0.4 && rect.bottom >= vh * 0.3;
-
-        if (inContact) {
-          setActiveSection("contant");
-          return;
-        }
-      }
-
-      // default on home page (top area)
-      if (scrollY < 400) {
+      const rect = contactEl.getBoundingClientRect();
+      if (rect.top < window.innerHeight / 2 && rect.bottom > 100) {
+        setActiveSection("contant");
+      } else {
         setActiveSection("home");
-        return;
       }
     };
 
     window.addEventListener("scroll", onScroll);
-    onScroll();
-
+    onScroll(); // initial call
     return () => window.removeEventListener("scroll", onScroll);
-  }, [location.pathname]);
-  
-  /* update active section when route changes */
-  useEffect(() => {
-    if (location.pathname === "/projects") {
-      setActiveSection("projects");
-    }
-
-    if (location.pathname !== "/" && location.pathname !== "/projects") {
-      // fallback: on any other route, clear highlight
-      setActiveSection("");
-    }
   }, [location.pathname]);
 
   /* helper to render each nav link --------------------------------- */
   const renderItem = (item: (typeof navItems)[0]) => {
     const { id, label, icon: Icon, path } = item;
     const isHashLink = path.includes("#");
+    const isActive =
+      (path === "/" && activeSection === "home" && location.pathname === "/") ||
+      (isHashLink && activeSection === "contant") ||
+      (!isHashLink && location.pathname === path);
 
-    // map path → section name
-    let sectionName = "";
-    if (path === "/") sectionName = "home";
-    else if (isHashLink) sectionName = "contant";
-    else if (path === "/projects") sectionName = "projects";
-
-    const isActive = activeSection === sectionName;
-
-    const handleClick = (e: React.MouseEvent) => {
+    const handleClick = async (e: React.MouseEvent) => {
       e.preventDefault();
 
       if (isHashLink) {
         const targetId = path.split("#")[1];
 
         if (location.pathname !== "/") {
+          // ✅ navigate home first, then scroll
           navigate("/");
+          // wait for home to mount
           setTimeout(() => {
             const target = document.getElementById(targetId);
             if (target) target.scrollIntoView({ behavior: "smooth" });
@@ -146,16 +119,15 @@ const NavBar = () => {
 
     return (
       <Link
-        to={path}
         key={id}
+        to={path}
         onClick={handleClick}
-        className={`group flex items-center gap-1 transition-all duration-200
-        ${
-          isActive
-            ? "text-black dark:text-white"
-            : "text-black/90 dark:text-zinc-300 hover:opacity-75"
-        }
-      `}
+        className={`group flex items-center gap-1 transition-all duration-200 
+          ${
+            isActive
+              ? "text-black dark:text-white"
+              : "text-black/90 dark:text-zinc-300 hover:opacity-75"
+          }`}
       >
         <Icon
           size={24}

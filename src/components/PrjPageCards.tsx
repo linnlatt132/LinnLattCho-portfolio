@@ -13,7 +13,7 @@ const PrjPageCards: React.FC<ProjectProps> = ({
   langs,
 }) => {
   return (
-    <GlassCard className="p-3! sm:p-4! h-fit">
+    <GlassCard className="px-5! py-7! sm:px-6! sm:py-8! h-fit">
       <div className="flex flex-col items-center justify-center align-middle">
         <img
           className="w-full border-[0.5px] border-black/30 dark:border-white/50 h-[4%] object-cover rounded-xl"
@@ -24,7 +24,7 @@ const PrjPageCards: React.FC<ProjectProps> = ({
           <h1 className="sm:text-2xl sm:font-bold text-xl font-semibold">
             {prjName}
           </h1>
-          <p className="sm:text-[12px] text-[10px] font-extralight leading-tight text-start">
+          <p className="sm:text-[16px] text-[10px] font-extralight leading-tight text-start">
             {prjDetail}
           </p>
 

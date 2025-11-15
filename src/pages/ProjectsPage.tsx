@@ -1,3 +1,4 @@
+import DarkLight from "../components/DarkLight";
 import { projects } from "../components/MyProjects";
 import PrjPageCards from "../components/PrjPageCards";
 
@@ -12,6 +13,9 @@ const ProjectPage = () => {
             <p className="text-gray-500 dark:text-gray-300">
               Here you can explore all my projects in detail.
             </p>
+          </div>
+          <div>
+            <DarkLight />
           </div>
         </div>
         {/* You can reuse ProjectCard list here */}
