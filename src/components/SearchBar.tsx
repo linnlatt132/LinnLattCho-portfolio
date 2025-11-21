@@ -1,3 +1,4 @@
+import { Search, X } from "lucide-react";
 import type React from "react";
 import { useState } from "react";
 
@@ -5,7 +6,6 @@ interface SearchBarInterface {
   searchItem?: string;
   handleSearchChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   sortBy?: string;
-  //   handleSortChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   handleSortChange?: (value: string) => void;
 }
 
@@ -21,16 +21,44 @@ const SearchBar = ({
     if (handleSortChange) handleSortChange(value);
     setIsOpen(false);
   };
+
+  //   clear search
+  const clearSearch = () => {
+    if (handleSearchChange) {
+      handleSearchChange({
+        target: { value: "" },
+      } as React.ChangeEvent<HTMLInputElement>);
+    }
+  };
+
+  const isSearchActive = searchItem && searchItem.length > 0;
+
   return (
     <div className="flex flex-row gap-2 md:gap-4 mt-4 justify-center">
       {/* Search Input */}
-      <input
-        type="text"
-        placeholder="Search projects by title..."
-        value={searchItem}
-        onChange={handleSearchChange}
-        className="text-sm md:text-[16px] flex-grow p-3 backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border-zinc-400/50 dark:border-zinc-300/30 border rounded-[15px] focus:outline-none focus:ring-2 focus:ring-blue-500  dark:text-white placeholder:text-zinc-700/50 dark:placeholder:text-zinc-400/70"
-      />
+      <div className="relative flex-grow p-3 backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border-zinc-400/50 dark:border-zinc-300/30 border rounded-[15px] dark:text-white placeholder:text-zinc-700/50 dark:placeholder:text-zinc-400/70">
+        <input
+          type="text"
+          placeholder="Search projects by title..."
+          value={searchItem}
+          onChange={handleSearchChange}
+          className="text-sm md:text-[16px] focus:outline-none w-full"
+        />
+        {/* Icon Container */}
+        <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
+          {isSearchActive ? (
+            <button
+              onClick={clearSearch}
+              className="p-1 text-zinc-700 dark:text-zinc-400 hover:text-red-500 dark:hover:text-red-400 transition-colors hover:cursor-pointer"
+              aria-label="Clear Search"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          ) : (
+            <Search className="h-5 w-5 text-zinc-700 dark:text-zinc-400 hover:cursor-pointer" />
+          )}
+        </div>
+      </div>
 
       {/* Sort Select */}
       <div className="relative">
