@@ -1,21 +1,7 @@
 import { Filter, Search, X } from "lucide-react";
 import type React from "react";
 import { useEffect, useState } from "react";
-
-// available languages for filtering
-const availableLanguages = [
-  "React",
-  "JavaScript",
-  "TypeScript",
-  "CSS",
-  "HTML",
-  "Tailwind CSS",
-  "C++",
-  "Java",
-  "GSAP",
-  "Leaflet",
-  "Framer Motion",
-];
+import { availableLanguages } from "../data/projects";
 
 interface SearchBarInterface {
   searchItem?: string;
