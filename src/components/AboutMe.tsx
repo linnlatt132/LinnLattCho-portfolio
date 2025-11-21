@@ -8,7 +8,7 @@ import { ChevronsRight, Sparkle } from "lucide-react";
 import GlassCard from "./GlassCard";
 import type React from "react";
 import { useTheme } from "../data/ThemeContext";
-import resume from "../assets/resume/LinnLattCho_Resume.pdf";
+import LinnLattCho_Resume from "../assets/resume/LinnLattCho-Resume.pdf";
 
 //links
 interface SocialLinkProps {
@@ -97,8 +97,8 @@ const AboutMe = () => {
         <button className="font-light text-[10px] sm:text-[13px] hover:cursor-pointer hover:animate-none pr-3 hover:pr-0 hover:opacity-60 transition-all">
           <a
             className="flex space-x-2 align-middle items-center justify-center"
-            href={resume}
-            download="resume"
+            href={LinnLattCho_Resume}
+            download="LinnLattCho_Resume"
           >
             Download my CV from
             <ChevronsRight
