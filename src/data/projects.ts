@@ -29,12 +29,12 @@ export const projects = [
     ],
   },
   {
-    id:2,
+    id: 2,
     title: "Project5",
     description:
       "Project4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id at obcaecati consequuntur rerum cum repellendus saepe in dicta! Vel quod similique quae iusto pariatur adipisci iste porro quasi! Debitis, dolores?",
     status: "Completed",
-    lang: ["React", "Javascript", "GSAP", "Leaflet"],
+    lang: ["React", "Javascript", "GSAP", "Leaflet", "Java"],
     liveLink: "https://example.com/project4",
     detailPoints: [
       "Fact 1: Achieved 95% test coverage.",
@@ -44,7 +44,7 @@ export const projects = [
     ],
   },
   {
-    id:3,
+    id: 3,
     title: "Project1",
     description:
       "Project1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat commodi delectus nostrum beatae ad, omnis sapiente excepturi aspernatur quo officiis impedit aliquid earum quas suscipit mollitia accusantium ea necessitatibus.",
@@ -60,7 +60,7 @@ export const projects = [
     gitLink: "https://example.com/project1.git",
   },
   {
-    id:4,
+    id: 4,
     title: "Project2",
     description:
       "Project2:  Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium consectetur nihil voluptatibus debitis quam ut ex temporibus, corporis alias voluptates totam excepturi deleniti cum, eum nisi harum, voluptate dolore aperiam!",
@@ -78,7 +78,7 @@ export const projects = [
     ],
   },
   {
-    id:5,
+    id: 5,
     title: "Project3",
     description:
       "Project3: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, sit. Omnis aliquid laborum vero, temporibus dicta nam neque sunt? Mollitia quod expedita assumenda debitis dolorum eos distinctio a repellendus at!",
@@ -93,7 +93,7 @@ export const projects = [
     ],
   },
   {
-    id:6,
+    id: 6,
     title: "Project4",
     description:
       "Project4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id at obcaecati consequuntur rerum cum repellendus saepe in dicta! Vel quod similique quae iusto pariatur adipisci iste porro quasi! Debitis, dolores?",

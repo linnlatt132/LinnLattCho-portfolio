@@ -14,13 +14,57 @@ const ProjectPage = () => {
   // sort
   const [sortBy, setSortBy] = useState<SortOption>("newest");
 
-  // filtering
-  const filteredAndSortedPrjs = useMemo(() => {
-    let filtered = prjs.filter((p) =>
-      p.title.toLowerCase().includes(searchItem.toLowerCase())
-    );
+  // filter lngs
+  const [selectedLngs, setSelectedLngs] = useState<string[]>([]);
 
-    // Sorting logic
+  // filtering for search and sort
+  // const filteredAndSortedPrjs = useMemo(() => {
+  //   let filtered = prjs.filter((p) =>
+  //     p.title.toLowerCase().includes(searchItem.toLowerCase())
+  //   );
+
+  //   // Sorting logic
+  //   filtered.sort((a, b) => {
+  //     if (sortBy === "newest") {
+  //       return b.id - a.id;
+  //     } else {
+  //       return a.id - b.id;
+  //     }
+  //   });
+
+  //   return filtered;
+  // }, [prjs, searchItem, sortBy]);
+
+  // filter for lngs
+  const handleLangFilterChange = (lng: string) => {
+    setSelectedLngs((prevLngs) => {
+      if (prevLngs.includes(lng)) {
+        return prevLngs.filter((l) => l !== lng);
+      } else {
+        return [...prevLngs, lng];
+      }
+    });
+  };
+
+  // Combined filtering and sorting logic
+  const filteredAndSortedPrjs = useMemo(() => {
+    let filtered = prjs;
+
+    // 1. Language Filtering
+    if (selectedLngs.length > 0) {
+      filtered = filtered.filter((p) =>
+        p.lang.some((l) => selectedLngs.includes(l))
+      );
+    }
+
+    // 2. Search Filtering (Title)
+    if (searchItem) {
+      filtered = filtered.filter((p) =>
+        p.title.toLowerCase().includes(searchItem.toLowerCase())
+      );
+    }
+
+    // 3. Sorting logic
     filtered.sort((a, b) => {
       if (sortBy === "newest") {
         return b.id - a.id;
@@ -30,14 +74,14 @@ const ProjectPage = () => {
     });
 
     return filtered;
-  }, [prjs, searchItem, sortBy]);
+  }, [prjs, searchItem, sortBy, selectedLngs]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchItem(event.target.value);
   };
- const handleSortChange = (value: string) => {
-   setSortBy(value as SortOption);
- };
+  const handleSortChange = (value: string) => {
+    setSortBy(value as SortOption);
+  };
 
   return (
     <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
@@ -61,6 +105,8 @@ const ProjectPage = () => {
           handleSearchChange={handleSearchChange}
           sortBy={sortBy}
           handleSortChange={handleSortChange}
+          selectedLngs={selectedLngs}
+          handleLangFilterChange={handleLangFilterChange}
         />
 
         {/* You can reuse ProjectCard list here */}
