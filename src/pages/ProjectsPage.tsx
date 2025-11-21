@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import DarkLight from "../components/DarkLight";
 import PrjPageCards from "../components/PrjPageCards";
 import { projects } from "../data/projects";
+import SearchBar from "../components/SearchBar";
 
 type SortOption = "latest" | "newest";
 const ProjectPage = () => {
@@ -34,9 +35,9 @@ const ProjectPage = () => {
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchItem(event.target.value);
   };
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortBy(event.target.value as SortOption);
-  };
+ const handleSortChange = (value: string) => {
+   setSortBy(value as SortOption);
+ };
 
   return (
     <div className="transition-colors duration-300 flex justify-center px-4 sm:px-6 md:px-8 w-full min-h-screen dark:text-white">
@@ -55,31 +56,12 @@ const ProjectPage = () => {
         </div>
 
         {/* Search bar and filter which will sorted by latest and newest */}
-        <div className="flex flex-row gap-4 mt-4">
-          {/* Search Input */}
-          <input
-            type="text"
-            placeholder="Search projects by title..."
-            value={searchItem}
-            onChange={handleSearchChange}
-            className="flex-grow p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-black/10 dark:border-gray-600 dark:text-white placeholder:text-zinc-700/50 dark:placeholder:text-zinc-400/70"
-          />
-
-          {/* Sort Select */}
-          <div className="relative">
-            <select
-              value={sortBy}
-              onChange={handleSortChange}
-              className="py-3 pr-9 px-5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-black/10 dark:border-gray-600 dark:text-white appearance-none cursor-pointer"
-            >
-              <option value="newest">Newest</option>
-              <option value="latest">Oldest</option>
-            </select>
-            <span className="pointer-events-none absolute right-3 top-3.5 ">
-              ▼
-            </span>
-          </div>
-        </div>
+        <SearchBar
+          searchItem={searchItem}
+          handleSearchChange={handleSearchChange}
+          sortBy={sortBy}
+          handleSortChange={handleSortChange}
+        />
 
         {/* You can reuse ProjectCard list here */}
         <ul className="grid grid-cols-1 gap-5">
