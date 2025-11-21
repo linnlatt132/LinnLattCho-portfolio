@@ -1,3 +1,8 @@
+import clock from "../assets/images/prj/clock.png";
+import todo from "../assets/images/prj/todo.png";
+import weather from "../assets/images/prj/weather.png";
+import generator from "../assets/images/prj/generator.png";
+
 // available languages for filtering
 export const availableLanguages = [
   "React",
@@ -62,7 +67,7 @@ export const projects = [
     description:
       "A weather app that fetches current weather and 6-day forecast using the OpenWeatherMap API. Built with HTML, CSS, JavaScript, and Bootstrap.",
     status: "Completed",
-    img: "",
+    img: weather,
     lang: ["HTML", "CSS", "JavaScript", "Bootstrap", "Axios"],
     liveLink: "https://weather-forecast-ten-zeta.vercel.app/",
     gitLink: "https://github.com/linnlatt132/WeatherForecast",
@@ -79,7 +84,7 @@ export const projects = [
     description:
       "A simple web app that displays a random motivational quote each time a button is clicked. Built with HTML, CSS, and JavaScript.",
     status: "Completed",
-    img: "",
+    img: generator,
     lang: ["HTML", "CSS", "JavaScript"],
     liveLink: "https://random-quote-generator-virid-gamma.vercel.app/",
     gitLink: "https://github.com/linnlatt132/random-quote-generator",
@@ -94,7 +99,7 @@ export const projects = [
     description:
       "A web app that shows the current time and date with a live digital clock and includes a fully functional stopwatch with start, stop, and reset features. Built with HTML, CSS, and JavaScript.",
     status: "Completed",
-    img: "",
+    img: clock,
     lang: ["HTML", "CSS", "JavaScript", "Font Awesome"],
     liveLink: "https://digital-clock-and-stopwatch.vercel.app/",
     gitLink: "https://github.com/linnlatt132/DigitalClock-and-Stopwatch",
@@ -107,6 +112,22 @@ export const projects = [
   },
   {
     id: 6,
+    title: "To Do List App",
+    description:
+      "A simple and responsive To-Do List web app that allows users to add, edit, delete, check, and manage daily tasks with persistent local storage. Built using HTML, CSS, and JavaScript.",
+    status: "Completed",
+    img: todo,
+    lang: ["HTML", "CSS", "JavaScript", "Font Awesome"],
+    liveLink: "https://to-do-list-wheat-chi-28.vercel.app/",
+    gitLink: "https://github.com/linnlatt132",
+    detailPoints: [
+      "Allows users to add, edit, delete, and mark tasks as completed with a clean and responsive UI.",
+      "Separates active tasks and completed tasks into different sections with smooth interaction.",
+      "Uses localStorage to save both active and completed tasks, ensuring data persistence on reload.",
+    ],
+  },
+  {
+    id: 7,
     title: "Sonique - Music Streaming App",
     description:
       "A Spotify-like music streaming app built with React, TypeScript, Tailwind CSS, Framer Motion, and Zustand. Includes user authentication, playlist management, and dynamic content rendering.",
@@ -131,7 +152,7 @@ export const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: "Portfolio Website",
     description:
       "My personal portfolio website built with React and TypeScript showcasing my projects, skills, certificates, experiences, and contact information. Includes modern animations, theme switching, and dynamic project filtering.",
@@ -158,7 +179,7 @@ export const projects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "ReelSpot - Movie Discovery Platform",
     description:
       "A movie discovery web app built with Vite + React that fetches data from TMDB API. Users can browse popular, trending, and upcoming movies, search by title, filter by genre, and view detailed movie info.",
@@ -188,7 +209,7 @@ export const projects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: "Sentria - Disaster Info Platform",
     description:
       "A real-time disaster information platform with multilingual support, geolocation features, and API integration. Built using React, TypeScript, Tailwind CSS, i18next, and React-Leaflet.",
@@ -204,6 +225,7 @@ export const projects = [
       "i18next",
       "useDebounce Hook",
       "React-Leaflet",
+      "Socket.io",
     ],
     gitLink: "https://github.com/AungKyawPhyo1142/fe-sentria",
     detailPoints: [

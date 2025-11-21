@@ -129,6 +129,7 @@ const SearchBar = ({
                         }, 300);
                       }, 300);
                     }
+                    setIsFilterOpen(false);
                   }}
                   className="text-[10px] md:text-xs text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300"
                 >
