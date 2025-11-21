@@ -57,13 +57,13 @@ const SearchBar = ({
   return (
     <div className="flex flex-row gap-2 md:gap-4 mt-4 justify-center">
       {/* Search Input */}
-      <div className="relative flex-grow p-3 backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border-zinc-400/50 dark:border-zinc-300/30 border rounded-[15px] dark:text-white placeholder:text-zinc-700/50 dark:placeholder:text-zinc-400/70">
+      <div className="relative flex-grow px-3 items-center align-middle backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border-zinc-400/50 dark:border-zinc-300/30 border rounded-[15px] dark:text-white placeholder:text-zinc-700/50 dark:placeholder:text-zinc-400/70">
         <input
           type="text"
           placeholder="Search projects by title..."
           value={searchItem}
           onChange={handleSearchChange}
-          className="text-sm md:text-[16px] focus:outline-none w-full"
+          className="text-sm md:text-[16px] absolute top-3 focus:outline-none w-full"
         />
         {/* Icon Container */}
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 ">
@@ -85,30 +85,30 @@ const SearchBar = ({
       <div className="relative">
         <button
           onClick={() => setIsFilterOpen(!isFilterOpen)}
-          className={`flex items-center justify-center w-[50px] md:w-[60px] text-sm md:text-[16px] py-3 px-3 focus:ring-2 focus:ring-blue-500 dark:text-white backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border rounded-[15px] transition-colors ${
+          className={`flex items-center justify-center w-[50px] md:w-[60px] text-xs md:text-[16px] py-3 px-0 md:px-3 focus:outline-none dark:text-white backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border rounded-[15px] transition-colors ${
             isFilterActive
               ? "border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400"
               : "border-zinc-400/50 dark:border-zinc-300/30"
           }`}
           aria-label="Filter Projects"
         >
-          <Filter className="h-5 w-5" />
+          <Filter className="md:h-5 md:w-5 h-4 w-4" />
           {/* Optional: Add a dot/count if filters are active */}
           {isFilterActive && (
-            <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+            <span className="absolute top-3 right-3 h-1 w-1 md:h-[6px] md:w-[6px] bg-red-500 rounded-full"></span>
           )}
         </button>
 
         {/* The Filter Options List */}
         {isFilterOpen && (
-          <div className="shadow-xl absolute right-0 top-full mt-1 w-[200px] backdrop-blur-[90px] bg-white/90 dark:bg-zinc-900/90 border border-zinc-400/50 dark:border-zinc-300/30 rounded-[15px] z-20 p-4 max-h-60 overflow-y-auto">
-            <h3 className="text-sm font-semibold mb-3 border-b pb-2 border-zinc-400/50 dark:border-zinc-300/30">
-              Filter by Language
+          <div className="shadow-xl absolute right-0 top-full mt-1 w-[100px] md:w-[180px] lg:w-[200px] backdrop-blur-[90px] bg-white/90 dark:bg-zinc-900/90 border border-zinc-400/50 dark:border-zinc-300/30 rounded-md md:rounded-[15px] z-20 p-2 md:p-4 max-h-60 overflow-y-hidden overflow-y-scroll">
+            <h3 className="text-xs md:text-sm font-semibold mb-3 border-b pb-2 border-zinc-400/50 dark:border-zinc-300/30">
+              Filter
             </h3>
             {availableLanguages.map((lang) => (
               <div
                 key={lang}
-                className="flex items-center space-x-2 py-1 cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+                className="flex items-center space-x-1 md:space-x-2 py-1 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
                 onClick={() =>
                   handleLangFilterChange && handleLangFilterChange(lang)
                 }
@@ -120,11 +120,11 @@ const SearchBar = ({
                   onChange={() =>
                     handleLangFilterChange && handleLangFilterChange(lang)
                   }
-                  className="form-checkbox h-4 w-4 text-blue-600 rounded border-gray-300 dark:border-gray-500 dark:bg-zinc-700"
+                  className="form-checkbox h-2 w-2 md:h-3 lg:h-4 md:w-3 lg:w-4 text-blue-600 rounded border-gray-300 dark:border-gray-500 dark:bg-zinc-700"
                 />
                 <label
                   htmlFor={`lang-filter-${lang}`}
-                  className="text-sm select-none"
+                  className="text-xs md:text-sm select-none"
                 >
                   {lang}
                 </label>
@@ -139,12 +139,12 @@ const SearchBar = ({
         {/* The "Trigger" Button (Replaces <select>) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-[110px] md:w-[140px] text-sm md:text-[16px] py-3 px-4 focus:ring-2 focus:ring-blue-500  dark:text-white
+          className="flex items-center justify-between w-[80px] md:w-[140px] text-xs md:text-[16px] py-3 px-3 md:px-4  focus:outline-none  dark:text-white
           backdrop-blur-[90px] shadow-xs bg-white/10 dark:bg-zinc-500/10 border-zinc-400/50 dark:border-zinc-300/30 border rounded-[15px] "
         >
           {/* Display readable text based on value */}
           <span>{sortBy === "newest" ? "Newest" : "Oldest"}</span>
-          <span className="ml-2 text-xs">▼</span>
+          <span className="ml-0 md:ml-2 text-xs">▼</span>
         </button>
 
         {/* The "Options" List (Replaces <option>) */}
