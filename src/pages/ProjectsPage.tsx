@@ -3,10 +3,16 @@ import DarkLight from "../components/DarkLight";
 import PrjPageCards from "../components/PrjPageCards";
 import { projects } from "../data/projects";
 import SearchBar from "../components/SearchBar";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 type SortOption = "latest" | "newest";
 const ProjectPage = () => {
   const prjs = projects;
+  const animatedTitle = useTypewriter("All Projects", 60);
+  const animatedSubtitle = useTypewriter(
+    "Here you can explore all my projects in detail, showcasing the full breadth of my technical skills and development stack.",
+    20
+  );
 
   // search
   const [searchItem, setSearchItem] = useState<string>("");
@@ -16,24 +22,6 @@ const ProjectPage = () => {
 
   // filter lngs
   const [selectedLngs, setSelectedLngs] = useState<string[]>([]);
-
-  // filtering for search and sort
-  // const filteredAndSortedPrjs = useMemo(() => {
-  //   let filtered = prjs.filter((p) =>
-  //     p.title.toLowerCase().includes(searchItem.toLowerCase())
-  //   );
-
-  //   // Sorting logic
-  //   filtered.sort((a, b) => {
-  //     if (sortBy === "newest") {
-  //       return b.id - a.id;
-  //     } else {
-  //       return a.id - b.id;
-  //     }
-  //   });
-
-  //   return filtered;
-  // }, [prjs, searchItem, sortBy]);
 
   // filter for lngs
   const handleLangFilterChange = (lng: string) => {
@@ -88,10 +76,9 @@ const ProjectPage = () => {
       <div className="w-full max-w-75 sm:max-w-150 md:max-w-[600px] lg:max-w-[700px] sm:pt-20 sm:pb-10 pb-4 pt-20 flex flex-col ">
         <div className="bg-transparent flex flex-col sm:flex-row mb-6 sm:mb-8 lg:mb-10 px-4 sm:px-0 justify-between items-center gap-4">
           <div className="flex flex-col items-center sm:items-start gap-4">
-            <h1 className="text-3xl font-bold mb-4">All Projects</h1>
-            <p className="text-gray-500 dark:text-gray-300">
-              Here you can explore all my projects in detail, showcasing the
-              full breadth of my technical skills and development stack.
+            <h1 className="text-3xl font-bold mb-4">{animatedTitle}</h1>
+            <p className="text-gray-500 dark:text-gray-300 text-center sm:text-left">
+              {animatedSubtitle}
             </p>
           </div>
           <div>

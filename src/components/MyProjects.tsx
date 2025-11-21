@@ -10,12 +10,12 @@ import { projects } from "../data/projects";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollSmoother);
 
-
 const MyProjects = () => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const exploreRef = useRef(null);
+  const latestProjects = [...projects].sort((a, b) => b.id - a.id).slice(0, 4);
 
   const navigate = useNavigate();
 
@@ -167,7 +167,7 @@ const MyProjects = () => {
 
       {/* Projects List */}
       <ul className="relative">
-        {projects.slice(-4).map((p, index) => (
+        {latestProjects.map((p, index) => (
           <li
             className="project-card sticky z-10"
             key={index}

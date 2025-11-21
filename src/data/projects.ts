@@ -15,7 +15,7 @@ export interface ProjectProps {
 export const projects = [
   {
     id: 1,
-    title: "Project0",
+    title: "Project0/1",
     description:
       "Project4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id at obcaecati consequuntur rerum cum repellendus saepe in dicta! Vel quod similique quae iusto pariatur adipisci iste porro quasi! Debitis, dolores?",
     status: "Completed",
@@ -30,7 +30,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Project5",
+    title: "Project5/2",
     description:
       "Project4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id at obcaecati consequuntur rerum cum repellendus saepe in dicta! Vel quod similique quae iusto pariatur adipisci iste porro quasi! Debitis, dolores?",
     status: "Completed",
@@ -45,7 +45,7 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Project1",
+    title: "Project1/3",
     description:
       "Project1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat commodi delectus nostrum beatae ad, omnis sapiente excepturi aspernatur quo officiis impedit aliquid earum quas suscipit mollitia accusantium ea necessitatibus.",
     img: Project,
@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Project2",
+    title: "Project2/4",
     description:
       "Project2:  Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium consectetur nihil voluptatibus debitis quam ut ex temporibus, corporis alias voluptates totam excepturi deleniti cum, eum nisi harum, voluptate dolore aperiam!",
     status: "Completed",
@@ -79,7 +79,7 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Project3",
+    title: "Project3/5",
     description:
       "Project3: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro, sit. Omnis aliquid laborum vero, temporibus dicta nam neque sunt? Mollitia quod expedita assumenda debitis dolorum eos distinctio a repellendus at!",
     status: "Completed",
@@ -94,7 +94,7 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Project4",
+    title: "Project4/6",
     description:
       "Project4: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id at obcaecati consequuntur rerum cum repellendus saepe in dicta! Vel quod similique quae iusto pariatur adipisci iste porro quasi! Debitis, dolores?",
     status: "In Progress",
