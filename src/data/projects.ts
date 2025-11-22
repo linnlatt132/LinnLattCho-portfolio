@@ -2,6 +2,10 @@ import clock from "../assets/images/prj/clock.png";
 import todo from "../assets/images/prj/todo.png";
 import weather from "../assets/images/prj/weather.png";
 import generator from "../assets/images/prj/generator.png";
+import portfolio from "../assets/images/prj/porject.png";
+import sentria from "../assets/images/prj/sentria.png";
+import sonique from "../assets/images/prj/sonique.png";
+import reelshot from "../assets/images/prj/reelshot.png";
 
 // available languages for filtering
 export const availableLanguages = [
@@ -132,7 +136,7 @@ export const projects = [
     description:
       "A Spotify-like music streaming app built with React, TypeScript, Tailwind CSS, Framer Motion, and Zustand. Includes user authentication, playlist management, and dynamic content rendering.",
     status: "Completed",
-    img: "",
+    img: sonique,
     lang: [
       "React",
       "TypeScript",
@@ -157,7 +161,7 @@ export const projects = [
     description:
       "My personal portfolio website built with React and TypeScript showcasing my projects, skills, certificates, experiences, and contact information. Includes modern animations, theme switching, and dynamic project filtering.",
     status: "Completed",
-    img: "",
+    img: portfolio,
     lang: [
       "React",
       "TypeScript",
@@ -184,7 +188,7 @@ export const projects = [
     description:
       "A movie discovery web app built with Vite + React that fetches data from TMDB API. Users can browse popular, trending, and upcoming movies, search by title, filter by genre, and view detailed movie info.",
     status: "Completed",
-    img: "",
+    img: reelshot,
     lang: [
       "React",
       "Vite",
@@ -214,7 +218,7 @@ export const projects = [
     description:
       "A real-time disaster information platform with multilingual support, geolocation features, and API integration. Built using React, TypeScript, Tailwind CSS, i18next, and React-Leaflet.",
     status: "In Progress",
-    img: "",
+    img: sentria,
     lang: [
       "React",
       "TypeScript",

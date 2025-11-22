@@ -90,7 +90,7 @@ const PrjPageCards: React.FC<ProjectProps> = ({
             >
               <img
                 ref={imageRef}
-                className="w-full h-full object-cover"
+                className="w-full h-full max-h-80 object-cover"
                 src={prjImg}
                 alt={prjName}
               />
