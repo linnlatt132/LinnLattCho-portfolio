@@ -2,10 +2,10 @@ import clock from "../assets/images/prj/clock.png";
 import todo from "../assets/images/prj/todo.png";
 import weather from "../assets/images/prj/weather.png";
 import generator from "../assets/images/prj/generator.png";
-import portfolio from "../assets/images/prj/porject.png";
 import sentria from "../assets/images/prj/sentria.png";
 import sonique from "../assets/images/prj/sonique.png";
-import reelshot from "../assets/images/prj/reelshot.png";
+import portfolioImg from "../assets/images/prj/portfolio.jpg";
+import movie from "../assets/images/prj/movie.jpg";
 
 // available languages for filtering
 export const availableLanguages = [
@@ -161,7 +161,7 @@ export const projects = [
     description:
       "My personal portfolio website built with React and TypeScript showcasing my projects, skills, certificates, experiences, and contact information. Includes modern animations, theme switching, and dynamic project filtering.",
     status: "Completed",
-    img: portfolio,
+    img: portfolioImg,
     lang: [
       "React",
       "TypeScript",
@@ -188,7 +188,7 @@ export const projects = [
     description:
       "A movie discovery web app built with Vite + React that fetches data from TMDB API. Users can browse popular, trending, and upcoming movies, search by title, filter by genre, and view detailed movie info.",
     status: "Completed",
-    img: reelshot,
+    img: movie,
     lang: [
       "React",
       "Vite",

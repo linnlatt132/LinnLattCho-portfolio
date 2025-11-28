@@ -8,7 +8,7 @@ import { ChevronsRight, Sparkle } from "lucide-react";
 import GlassCard from "./GlassCard";
 import type React from "react";
 import { useTheme } from "../data/ThemeContext";
-import LinnLattCho_Resume from "../assets/resume/LinnLattCho-Resume.pdf";
+import LinnLattCho_Resume from "../assets/resume/LinnLattCho_Resume.pdf";
 
 //links
 interface SocialLinkProps {
